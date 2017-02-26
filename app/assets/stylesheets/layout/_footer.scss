@@ -1,1 +1,36 @@
-// Your footer style
+footer {
+  // position: absolute;
+  padding: 0.6em;
+  background-color: #484848;
+  text-align: center;
+  width: 100%;
+  clear:both;
+  width:100%;
+  margin:auto;
+  top: 100%;
+}
+
+span.copyright {
+  padding-left: 10px;
+  color: #FFF;
+  text-transform: none;
+  font-size: 12px;
+}
+
+
+li a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #FFF;
+  padding-top: 5px;
+  background-color: transparent;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+
+  :hover,:focus,:active {
+    color: $hover-color;
+  }
+}
