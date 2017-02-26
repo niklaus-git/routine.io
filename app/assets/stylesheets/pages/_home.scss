@@ -2,3 +2,38 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+body {
+  margin: 0;
+  font-family: $base-font;
+  font-size: 19px;
+  line-height: 1.6em;
+  color: $text-grey;
+  background-color: #FFF;
+}
+
+h1, h2, h3 {
+  font-family: $header-font;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-family: $accent-font;
+  font-size: 23px;
+}
+
+ // Wrappers
+ .page-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+ }
+
+ // Padding
+
+ .padded-top {
+  padding-top: 50px;
+ }
+
+.padded-bottom {
+  padding-bottom: 50px;
+}
