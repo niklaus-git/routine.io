@@ -2,9 +2,10 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Nixie+One|Open+Sans:300i,400,600,700,800");
 $base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Raleway", "Helvetica", "sans-serif";
+$header-font: 'Nixie One', "Helvetica", "sans-serif";
+$accent-font: 'Dancing Script', cursive;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -22,9 +23,13 @@ $base-height: 1.4;
 
 /* -------------------------------------
  * Colors
+
  * ------------------------------------- */
 // Scheme
-$brand-color: #D23333;
+$routine-color: #634699;
+$hover-color: #5F9EA0;
+$text-grey: #585858;
+$text-light-grey: #cccccc;
 
 $red: #EE5F5B;
 $blue: #469AE0;
