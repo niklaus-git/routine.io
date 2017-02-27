@@ -1,0 +1,2 @@
+class AnswerPossibility < ApplicationRecord
+end

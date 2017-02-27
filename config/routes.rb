@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
 
-  get 'routine/new'
+  # get 'answers/new'
 
-  get 'routine/create'
+  # get 'answers/create'
 
-  get 'routine/read'
+  # get 'answers/read'
 
-  get 'routine/edit'
+  # get 'answers/edit'
 
-  get 'routine/update'
+  # get 'answers/update'
 
-  get 'routine/destroy'
+  # get 'answers/destroy'
 
-  get 'test', to: 'pages#test'
 
   devise_for :users
+
   root to: 'pages#home'
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
     resources :routines do
       member do
         get 'activate'
