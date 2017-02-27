@@ -19,7 +19,11 @@
   border-radius: 50%;
 }
 
-.btn-scooter {
+.btn-upcase {
+  text-transform: uppercase;
+}
+
+.btn-scooter-light {
   color: #FFF;
   fill: #FFF;
   border: 1px solid $scooter-color;
@@ -27,5 +31,16 @@
   &:hover {
     color: $text-dark;
     fill: $text-dark;
+  }
+}
+
+.btn-scooter-dark {
+  color: #FFF;
+  fill: #FFF;
+  border: 1px solid $scooter-color;
+  background: $scooter-color;
+  &:hover {
+    color: #FFF;
+    fill: #FFF;
   }
 }
