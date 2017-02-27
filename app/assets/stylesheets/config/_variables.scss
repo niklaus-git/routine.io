@@ -2,7 +2,8 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oswald::300,400,500,600,700|Open+Sans:300i,400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oswald::300,400,500,600,700|Open+Sans:300i,300,400,600,700,800");
+
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: 'Oswald', "Helvetica", "sans-serif";
 $accent-font: 'Dancing Script', cursive;
@@ -28,8 +29,12 @@ $base-height: 1.4;
 // Scheme
 $routine-color: #634699;
 $hover-color: #5F9EA0;
+$scooter-color: #2C8C99;
+$darkslate-color: #2B484D;
+$routine-grey: #9C9C9C;
 $text-grey: #585858;
 $text-light-grey: #cccccc;
+$text-dark: #333333;
 
 $red: #EE5F5B;
 $blue: #469AE0;
