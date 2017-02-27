@@ -3,4 +3,7 @@ class PagesController < ApplicationController
   layout "home_layout"
   def home
   end
+
+  def test
+  end
 end

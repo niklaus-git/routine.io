@@ -1,0 +1,31 @@
+.btn-routine {
+  font-weight: lighter;
+  padding: 10px 25px;
+  transition: background 0.3s ease;
+  &:hover {
+    background: transparent;
+  }
+}
+
+.btn-pill {
+  border-radius: 50px;
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+.btn-scooter {
+  color: #FFF;
+  fill: #FFF;
+  border: 1px solid $scooter-color;
+  background: $scooter-color;
+  &:hover {
+    color: $text-dark;
+    fill: $text-dark;
+  }
+}
