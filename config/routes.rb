@@ -17,8 +17,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  get 'test', to: 'pages#test'
     resources :routines do
       member do
         get 'activate'
