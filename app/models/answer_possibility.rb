@@ -1,2 +1,0 @@
-class AnswerPossibility < ApplicationRecord
-end

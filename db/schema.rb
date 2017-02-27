@@ -10,35 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227173049) do
+ActiveRecord::Schema.define(version: 20170227201643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answer_possibilities", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "answers", force: :cascade do |t|
     t.string   "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id"
+    t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
+  end
+
+  create_table "question_choices", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id"
+    t.index ["question_id"], name: "index_question_choices_on_question_id", using: :btree
   end
 
   create_table "question_types", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "require_answer_possibilities"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "require_question_choices"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "questions", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "routine_id"
+    t.integer  "question_type_id"
+    t.index ["question_type_id"], name: "index_questions_on_question_type_id", using: :btree
     t.index ["routine_id"], name: "index_questions_on_routine_id", using: :btree
   end
 
@@ -65,5 +71,8 @@ ActiveRecord::Schema.define(version: 20170227173049) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "question_choices", "questions"
+  add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "routines"
 end
