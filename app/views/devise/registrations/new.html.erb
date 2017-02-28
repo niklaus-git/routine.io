@@ -2,18 +2,21 @@
 
 <div class="social-media-authentication">
   <p>Sign up with...</p>
-  <a href="" class="social-media-button valencia-red">
+  <%= link_to user_google_oauth2_omniauth_authorize_path, class: "social-media-button valencia-red" do %>
     <i class="fa fa-google-plus"></i>
-  </a>
-  <a href="" class="social-media-button light-blue">
+  <% end %>
+
+  <%= link_to user_linkedin_omniauth_authorize_path, class: "social-media-button light-blue" do%>
     <i class="fa fa-linkedin"></i>
-  </a>
-  <a href="" class="social-media-button dark-blue">
+  <% end %>
+
+  <%= link_to user_facebook_omniauth_authorize_path, class: "social-media-button dark-blue" do %>
     <i class="fa fa-facebook-f"></i>
-  </a>
-  <a href="" class="social-media-button dark-grey">
+  <% end %>
+
+  <%= link_to user_github_omniauth_authorize_path, class: "social-media-button dark-grey" do %>
     <i class="fa fa-github"></i>
-  </a>
+  <% end %>
   <p>or use your email:</p>
 </div>
 
