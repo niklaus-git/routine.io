@@ -16,8 +16,13 @@
     <%= render 'shared/header' %>
     <div class="page-wrapper padded-top padded-bottom">
       <%= yield %>
+
+    <%= render 'shared/about' %>
+
       <%= javascript_include_tag 'application' %>
+
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
 

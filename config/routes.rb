@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  get 'team', to: 'pages#team'
+
   get 'test', to: 'pages#test'
     resources :routines do
       member do
