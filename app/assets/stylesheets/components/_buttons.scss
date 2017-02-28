@@ -23,6 +23,10 @@
   text-transform: uppercase;
 }
 
+.btn-full-w {
+  width: 100%;
+}
+
 .btn-scooter-light {
   color: #FFF;
   fill: #FFF;
@@ -42,5 +46,30 @@
   &:hover {
     color: #FFF;
     fill: #FFF;
+  }
+}
+
+.btn-scooter-inverse {
+  color: $scooter-color;
+  fill: $scooter-color;
+  border: 1px solid $scooter-color;
+  background: #FFF;
+  &:hover {
+    color: #FFF;
+    fill: #FFF;
+    background: $scooter-color;
+  }
+}
+
+.btn-signup-submit {
+  color: #FFF;
+  fill: #FFF;
+  border: 1px solid $scooter-color;
+  background: $scooter-color;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.8;
+    background: $scooter-color;
+    color: #FFF;
   }
 }

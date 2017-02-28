@@ -1,0 +1,39 @@
+<%= link_to image_tag("logo-brand-color.png"), root_path %>
+
+<div class="social-media-authentication">
+  <p>Sign up with...</p>
+  <a href="" class="social-media-button valencia-red">
+    <i class="fa fa-google-plus"></i>
+  </a>
+  <a href="" class="social-media-button light-blue">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  <a href="" class="social-media-button dark-blue">
+    <i class="fa fa-facebook-f"></i>
+  </a>
+  <a href="" class="social-media-button dark-grey">
+    <i class="fa fa-github"></i>
+  </a>
+  <p>or use your email:</p>
+</div>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true, placeholder: "E-mail", label: false %>
+    <%= f.input :password, required: true, placeholder: "Password", label: false %>
+
+    <%= f.input :password_confirmation, required: true, placeholder: "Password", label: "Confirm your password" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: "btn btn-routine btn-signup-submit btn-full-w" %>
+  </div>
+<% end %>
+<hr>
+<div class="signup-login-switch">
+  <p>Already have an account?</p>
+  <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-routine btn-scooter-inverse" %>
+</div>
+
