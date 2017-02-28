@@ -1,0 +1,71 @@
+.social-media-authentication {
+  color: $text-grey;
+  font-size: 15px;
+  a {
+    text-decoration: none;
+    color: #FFF;
+    line-height: 38px;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+
+.social-media-button {
+  width: 78px;
+  height: 38px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 4px;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.valencia-red {
+  background: #DD4D41;
+}
+
+.light-blue {
+  background: #0072AA;
+}
+
+.dark-blue {
+  background: #4C6CA6;
+}
+
+.dark-grey {
+  background: #24292E;
+}
+
+#forgot-password {
+  text-align: left;
+  margin-bottom: 10px;
+  a {
+    color: $scooter-color;
+    font-size: 15px;
+  }
+}
+
+.signup-login-switch {
+  display: flex;
+  justify-content: flext-start;
+  text-align: left;
+  p {
+    flex: 1 1 auto;
+    margin-bottom: 0px;
+    line-height: 44px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+// Style simple_form labels
+.simple_form {
+  text-align: left;
+  label {
+    font-size: 15px;
+  }
+}
+
