@@ -1,36 +1,57 @@
-footer {
-  // position: absolute;
-  padding: 0.6em;
-  background-color: #484848;
+/* -------------------------------------
+ * CSS code specific to footer section
+ * (margin/padding adjustments)
+ * ------------------------------------- */
+ footer {
+  padding: 15px 0;
   text-align: center;
-  width: 100%;
-  clear:both;
-  width:100%;
-  margin:auto;
-  top: 100%;
-}
+  background: #F8F8F8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-span.copyright {
-  padding-left: 10px;
-  color: #FFF;
-  text-transform: none;
-  font-size: 12px;
-}
-
-
-li a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  color: #FFF;
-  padding-top: 5px;
-  background-color: transparent;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  transition: all .3s;
-
-  :hover,:focus,:active {
-    color: $hover-color;
+  span.copyright {
+    padding-left: 10px;
+    color: $routine-grey;
+    text-transform: none;
+    font-weight: lighter;
+    font-size: 15px;
+    line-height: 35px;
   }
 }
+ul.social-footer {
+  margin-bottom: 0;
+
+  li a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    outline: 0;
+    color: $routine-grey;
+    background-color: transparent;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+
+    :hover,:focus,:active {
+      color: $hover-color;
+    }
+  }
+}
+
+footer ul a {
+  margin-bottom: 0;
+  line-height: 40px;
+  font-family: $base-font;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $routine-grey;
+}
+
+a:hover{
+  text-decoration: none;
+  color: $hover-color;
+}
+

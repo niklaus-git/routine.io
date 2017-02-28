@@ -1,0 +1,43 @@
+/* -------------------------------------
+ * CSS code specific to team page
+ * (margin/padding adjustments)
+ * ------------------------------------- */
+ section{
+  padding: 10px 0px 10px 0px;
+  margin-left: -50px;
+ }
+.team-member {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.team-member img {
+  height: 270px;
+  width: 270px;
+  border: 7px solid #f1f1f2;
+}
+.team-member p {
+  margin-top: 0;
+}
+
+ul.social-buttons {
+  margin-bottom: 0;
+}
+ul.social-buttons li a {
+  display: block;
+  background-color: $hover-color;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 33px;
+  color: white;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+  background-color: $routine-color;
+}
