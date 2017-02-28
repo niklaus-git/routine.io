@@ -1,4 +1,4 @@
-class RoutineController < ApplicationController
+class RoutinesController < ApplicationController
   def index
   end
 
