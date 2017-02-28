@@ -5,12 +5,15 @@
   <a href="" class="social-media-button valencia-red">
     <i class="fa fa-google-plus"></i>
   </a>
+
   <a href="" class="social-media-button light-blue">
     <i class="fa fa-linkedin"></i>
   </a>
-  <a href="" class="social-media-button dark-blue">
+
+  <%= link_to user_facebook_omniauth_authorize_path, class: "social-media-button dark-blue" do %>
     <i class="fa fa-facebook-f"></i>
-  </a>
+  <% end %>
+
   <a href="" class="social-media-button dark-grey">
     <i class="fa fa-github"></i>
   </a>
