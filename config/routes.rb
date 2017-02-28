@@ -1,19 +1,7 @@
 Rails.application.routes.draw do
 
-  # get 'answers/new'
-
-  # get 'answers/create'
-
-  # get 'answers/read'
-
-  # get 'answers/edit'
-
-  # get 'answers/update'
-
-  # get 'answers/destroy'
-
-
-  devise_for :users
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'pages#home'
 

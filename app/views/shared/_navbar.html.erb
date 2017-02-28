@@ -7,24 +7,21 @@
   <!-- Right Navigation -->
   <div class="navbar-routine-right hidden-xs hidden-sm">
 
-    <!-- Different navigation if login or not -->
+    <!-- Different navigation if user logged in or not -->
     <div class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <!-- Profile picture and dropdown -->
         <div class="navbar-routine-item">
           <div class="dropdown">
-
-          <!-- Facebook connect -->
-
-          <%= image_tag("http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-routine-menu", "data-toggle" => "dropdown") %>
+            <%= image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbar-routine-menu", "data-toggle" => "dropdown" %>
 
             <ul class="dropdown-menu dropdown-menu-right navbar-routine-dropdown-menu">
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <%= t(".sign_out", default: "Log out") %>
                 <% end %>
+                <hr>
               </li>
-              <hr>
             </ul>
           </div>
         </div>
