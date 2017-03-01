@@ -12,7 +12,7 @@
 
   span.copyright {
     padding-left: 10px;
-    color: #FFF;
+    color: white;
     text-transform: none;
     font-weight: lighter;
     font-size: 15px;
@@ -29,14 +29,14 @@ ul.social-footer {
     font-size: 18px;
     line-height: 35px;
     outline: 0;
-    color: #FFF;
+    color: white;
     background-color: transparent;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
 
     :hover,:focus,:active {
-      color: $hover-color;
+      color: black;
     }
   }
 }
@@ -47,11 +47,11 @@ footer ul a {
   font-family: $base-font;
   text-decoration: none;
   text-transform: uppercase;
-  color: #FFF;
+  color: white;
 }
 
 a:hover{
   text-decoration: none;
-  color: $hover-color;
+  color: black;
 }
 
