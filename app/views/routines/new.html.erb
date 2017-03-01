@@ -1,25 +1,4 @@
-<div class="row">
-  <div class="col-md-4">
-    <div class="routine-sidebar text-center">
-      <h3>Select Form Fields</h3>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Short Text</div>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Long Text</div>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Multiple Choice</div>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Rating/Scale</div>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Yes/No</div>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Numbers</div>
-      <div class="btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom">Time Periods</div>
-    </div>
-  </div>
-  <div class="col-md-8 text-center">
-    <div class="routine-editor">
-      <h1>My Routine</h1>
-      <div id="editor-info">
-        Click the form fields on the left to get started
-      </div>
-      <div id="preview-button" class="btn btn-routine btn-scooter-light btn-circle btn-shadow-circle svg-icon">
-        <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= simple_form_for(@routine) do |f| %>
+<%= f.input :name %>
+<%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
+<% end %>

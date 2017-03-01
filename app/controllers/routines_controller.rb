@@ -1,17 +1,23 @@
 class RoutinesController < ApplicationController
+  before_action :set_routine, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
   def new
+    @routine = Routine.new
   end
 
   def create
+    @routine = current_user.routines.new(routine_params)
+    if @routine.save
+      redirect_to routine_questions_path(@routine)
+    else
+      render :new
+    end
   end
 
   def show
-    @routine = Routine.find(params[:id])
-    @questions = @routine.questions
-
   end
 
   def edit
@@ -21,5 +27,13 @@ class RoutinesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def set_routine
+    @routine = Routine.find(params[:id])
+  end
+
+  def routine_params
+    params.require(:routine).permit(:name)
   end
 end

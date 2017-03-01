@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228144127) do
+ActiveRecord::Schema.define(version: 20170301213621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,11 @@ ActiveRecord::Schema.define(version: 20170228144127) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "routine_id"
     t.integer  "question_type_id"
+    t.integer  "position",         default: 0
     t.index ["question_type_id"], name: "index_questions_on_question_type_id", using: :btree
     t.index ["routine_id"], name: "index_questions_on_routine_id", using: :btree
   end
@@ -64,6 +65,8 @@ ActiveRecord::Schema.define(version: 20170228144127) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_routines_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,4 +94,5 @@ ActiveRecord::Schema.define(version: 20170228144127) do
   add_foreign_key "question_choices", "questions"
   add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "routines"
+  add_foreign_key "routines", "users"
 end

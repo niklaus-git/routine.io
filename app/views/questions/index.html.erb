@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="routine-sidebar text-center">
+      <h3>Select Form Fields</h3>
+      <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Long Text", new_routine_question_path(@routine, question_type_name: "long text"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Multiple Choice", new_routine_question_path(@routine, question_type_name: "multiple choice"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Rating/Scale", new_routine_question_path(@routine, question_type_name: "scale"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Yes/No", new_routine_question_path(@routine, question_type_name: "yes/no"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Numbers", new_routine_question_path(@routine, question_type_name: "number"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Time Period", new_routine_question_path(@routine, question_type_name: "time periods"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <div class="btn btn-routine btn-signup-submit btn-full-w">Use Template</div>
+    </div>
+  </div>
+  <div class="col-md-8 text-center">
+    <div class="routine-editor">
+      <h1><%= @routine.name %></h1>
+      <div id="questions-list">
+      <% if @questions.empty? %>
+        <div id="editor-info">
+          Click the form fields on the left to get started
+        </div>
+      <% else %>
+        <%= render @questions %>
+      <% end %>
+      </div>
+      <div id="preview-button" class="btn btn-routine btn-scooter-light btn-circle btn-shadow-circle svg-icon">
+        <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="#new-question" class="modal"></div>

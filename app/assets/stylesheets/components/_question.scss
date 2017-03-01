@@ -1,0 +1,20 @@
+.question-row {
+  display: flex
+}
+.question-box {
+  color: $text-dark;
+  font-weight: lighter;
+  padding: 10px 25px;
+  background: #FFF;
+  border: 1px solid $border-line;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+}
+
+.question-position {
+  margin-right: 10px;
+}
+
+.question-name {
+  flex: 1 1 auto;
+}
