@@ -22,6 +22,15 @@ module RoutineIo
       generate.assets false
     end
 
+    # Apply custom layouts to Devise controllers
+    config.to_prepare do
+      Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "authentication" : "application" }
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "authentication" }
+      Devise::ConfirmationsController.layout "application"
+      Devise::UnlocksController.layout "application"
+      Devise::PasswordsController.layout "application"
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

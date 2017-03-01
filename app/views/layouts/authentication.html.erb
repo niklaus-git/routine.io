@@ -15,16 +15,11 @@
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
 </head>
-<body>
+<body class="authentication-body">
   <div class="layout-wrapper">
-
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
   </div>
 
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
