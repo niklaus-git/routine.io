@@ -3,6 +3,7 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+// Text and headers
 body {
   margin: 0;
   font-family: $base-font;
@@ -50,7 +51,6 @@ h4 {
  }
 
  // Padding
-
  .padded-top {
   padding-top: 50px;
  }
@@ -59,4 +59,22 @@ h4 {
   padding-bottom: 50px;
 }
 
+// Text Selection and highlight color
+::-moz-selection {
+  text-shadow: none;
+  background: $highlight-color;
+}
+::selection {
+  text-shadow: none;
+  background: $highlight-color;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  webkit-tap-highlight-color: $highlight-color;
+}
 
