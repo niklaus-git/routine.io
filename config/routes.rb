@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get 'team', to: 'pages#team'
 
   get 'test', to: 'pages#test'
-    resources :routines do
-      member do
-        get 'activate'
-      end
+
+  resources :routines do
+    member do
+      get 'activate'
     end
+    resources :questions
+  end
 end

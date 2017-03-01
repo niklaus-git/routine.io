@@ -1,0 +1,5 @@
+<%= simple_form_for([@routine, @question]) do |f| %>
+<%= f.input :name %>
+<%= f.hidden_field :question_type_id, value: @question_type.id %>
+<%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
+<% end %>

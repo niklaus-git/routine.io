@@ -1,2 +1,4 @@
-<h1>Routine#new</h1>
-<p>Find me in app/views/routine/new.html.erb</p>
+<%= simple_form_for(@routine) do |f| %>
+<%= f.input :name %>
+<%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
+<% end %>

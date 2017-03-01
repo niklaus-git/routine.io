@@ -2,11 +2,12 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oswald::300,400,500,600,700|Open+Sans:300i,300,400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oswald:300,400,500,600,700|Open+Sans:300i,300,400,600,700,800|Gloria+Hallelujah");
 
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: 'Oswald', "Helvetica", "sans-serif";
 $accent-font: 'Dancing Script', cursive;
+$fun-font: 'Gloria Hallelujah', cursive;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -44,4 +45,5 @@ $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
 
-$light-grey: #cccccc;
+$light-grey: #f1f1f1;
+$border-line: #DCE0E0;
