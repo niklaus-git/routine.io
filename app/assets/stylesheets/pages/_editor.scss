@@ -1,0 +1,33 @@
+.routine-sidebar {
+  background: $light-grey;
+  border-radius: 10px;
+  padding: 20px;
+  height: 75vh;
+  h3 {
+    padding-bottom: 10px;
+  }
+}
+
+.routine-editor {
+  background: $light-grey;
+  border-radius: 10px;
+  padding: 20px;
+  height: 75vh;
+  position: relative;
+  h1 {
+    font-size: 25px;
+  }
+}
+
+#editor-info {
+  font-family: $fun-font;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#preview-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
