@@ -5,14 +5,14 @@
  footer {
   padding: 15px 0;
   text-align: center;
-  background: #F8F8F8;
+  background: $footer-bg;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   span.copyright {
     padding-left: 10px;
-    color: $routine-grey;
+    color: #FFF;
     text-transform: none;
     font-weight: lighter;
     font-size: 15px;
@@ -29,7 +29,7 @@ ul.social-footer {
     font-size: 18px;
     line-height: 35px;
     outline: 0;
-    color: $routine-grey;
+    color: #FFF;
     background-color: transparent;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
@@ -47,7 +47,7 @@ footer ul a {
   font-family: $base-font;
   text-decoration: none;
   text-transform: uppercase;
-  color: $routine-grey;
+  color: #FFF;
 }
 
 a:hover{
