@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :routines
   has_many :authorizations
 
+  def member_since
+    self.created_at.strftime("%-d %b, %Y")
+  end
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist

@@ -13,14 +13,16 @@
         <!-- Profile picture and dropdown -->
         <div class="navbar-routine-item">
           <div class="dropdown">
-            <%= image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbar-routine-menu", "data-toggle" => "dropdown" %>
+            <%= image_tag avatar_url(current_user), class: "avatar-large dropdown-toggle", id: "navbar-routine-menu", "data-toggle" => "dropdown" %>
 
             <ul class="dropdown-menu dropdown-menu-right navbar-routine-dropdown-menu">
               <li>
+                <%= link_to "Edit Profile", edit_user_registration_path(current_user) %>
+              </li>
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <%= t(".sign_out", default: "Log out") %>
+                  <%= t(".sign_out", default: "Log Out") %>
                 <% end %>
-                <hr>
               </li>
             </ul>
           </div>

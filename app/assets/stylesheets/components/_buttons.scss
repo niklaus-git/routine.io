@@ -73,3 +73,16 @@
     color: #FFF;
   }
 }
+
+.btn-routine-submit {
+  color: #FFF;
+  fill: #FFF;
+  border: 1px solid $routine-color;
+  background: $routine-color;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.8;
+    background: $routine-color;
+    color: #FFF;
+  }
+}
