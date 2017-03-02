@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'fields/index'
-
-  get 'fields/new'
-
-  get 'fields/create'
-
-  get 'fields/edit'
-
-  get 'fields/update'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
