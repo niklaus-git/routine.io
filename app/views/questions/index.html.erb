@@ -24,11 +24,22 @@
         <%= render @questions %>
       <% end %>
       </div>
-      <div id="preview-button" class="btn btn-routine btn-scooter-light btn-circle btn-shadow-circle svg-icon">
+      <div class="spacer"></div>
+      <%= link_to "#routine-preview", id: "preview-button", class: "btn btn-routine btn-scooter-light btn-circle btn-shadow-circle svg-icon", "data-toggle": "modal"  do %>
         <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div id="#new-question" class="modal"></div>
+<div class="modal fade" id="routine-preview" title="Routine Preview">
+  <div class="modal-dialog">
+    <div class="modal-content preview-content text-center">
+      <h2><%= @routine.name %></h2>
+      <%= render @questions %>
+      <div class="spacer"></div>
+      <%= link_to "Submit Routine", submit_routine_path(@routine), id: "submit-button", class: "btn btn-routine btn-signup-submit btn-pill" %>
+      <div id="continue-button" class="btn btn-routine btn-signup-submit btn-pill">Continue Editing</div>
+    </div>
+  </div>
+</div>
