@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:show, :edit, :update, :destroy]
+  before_action :set_routine, only: [:show, :edit, :update, :destroy, :submit]
 
   def index
   end
@@ -27,6 +27,11 @@ class RoutinesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def submit
+    @answer = @routine.answers.create
+    redirect_to answer_fields_path(@answer)
   end
 
   def set_routine
