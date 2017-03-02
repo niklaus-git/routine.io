@@ -1,0 +1,20 @@
+<li id=<%= "#{question.id}" %> class="active focus">
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Input -->
+  <div class="yes-no list">
+    <ul class="columns">
+      <li>
+        <input type="hidden" name="value" value="yes" autocomplete="off">
+        <span class="label">Yes</span>
+      </li>
+      <li>
+        <input type="hidden" name="value" value="no" autocomplete="off">
+        <span class="label">No</span>
+      </li>
+    </ul>
+  </div>
+
+</li>

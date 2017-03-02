@@ -1,0 +1,16 @@
+<li id=<%= "#{question.id}" %> class="active focus">
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Input -->
+  <div class="textarea">
+    <span class="question-tip">
+      Press <strong>SHIFT + ENTER</strong> to add a paragraph
+    </span>
+    <textarea autocomplete="off"></textarea>
+  </div>
+
+  <div class="btn-enter">press <strong>ENTER</strong></div>
+
+</li>

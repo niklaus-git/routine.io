@@ -11,6 +11,17 @@ class User < ApplicationRecord
     self.created_at.strftime("%-d %b, %Y")
   end
 
+  def greetings
+    hour = Time.now.hour
+    if hour >= 5 && hour <= 12
+      return "Good morning, #{self.first_name}!"
+    elsif hour > 12 && hour < 19
+      return "Good afternoon, #{self.first_name}!"
+    else
+      return "Good evening, #{self.first_name}!"
+    end
+  end
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist

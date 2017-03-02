@@ -1,0 +1,15 @@
+<li id=<%= "#{question.id}" %> class="active focus">
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Input -->
+  <div class="multiple list">
+    <ul class="columns">
+      <% question.question_choices.each do |choice| %>
+        <%= render 'forms/choice', choice: choice %>
+      <% end %>
+    </ul>
+  </div>
+
+</li>
