@@ -43,6 +43,8 @@ class RoutinesController < ApplicationController
   end
 
   def prepare_answer
+
+  #  Answer.where(created_at: Date.today.midnight..Date.today.end_of_day)
     @answer = @routine.answers.create
     @routine.questions.each do |question|
       field = @answer.fields.new(question_id: question.id, answer_id: @answer.id)
