@@ -1,5 +1,19 @@
-<div class="question-row">
+<div id=<%= "question-#{question.id}" %> class="question-row">
     <div class="question-box question-position"><%= question.position %></div>
-    <div class="question-box question-name"><%= question.name %></div>
+    <div class="question-box question-body">
+      <div class="question-name">
+        <%= question.name %>
+      </div>
+      <div class="question-tools">
+        <%= link_to edit_routine_question_path(@routine, question), remote: true do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+        <% if @routine.answers.empty? %>
+          <%= link_to routine_question_path(@routine, question), method: :delete, remote: true do %>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 </div>
 

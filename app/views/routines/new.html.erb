@@ -1,4 +1,6 @@
-<%= simple_form_for(@routine) do |f| %>
-<%= f.input :name %>
-<%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
-<% end %>
+<div class="routine-new">
+  <%= simple_form_for(@routine) do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
+  <% end %>
+</div>

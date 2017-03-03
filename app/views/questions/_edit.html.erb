@@ -1,0 +1,9 @@
+<div class="new-question-container">
+  <%= simple_form_for [@routine, @question], remote: true do |f| %>
+  <%= f.input :name, input_html: { class: "name-input" } %>
+  <div>
+    <%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
+    <div class="btn btn-routine btn-scooter-light" data-dismiss="modal">Cancel</div>
+  </div>
+  <% end %>
+</div>

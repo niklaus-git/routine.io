@@ -15,6 +15,28 @@
   margin-right: 10px;
 }
 
+.question-body {
+  flex: 1 1 auto;
+  display: flex;
+   &:hover {
+    .question-tools {
+      display: block;
+    }
+  }
+}
+
 .question-name {
   flex: 1 1 auto;
+}
+
+.question-tools {
+  a {
+    text-decoration: none;
+    color: $text-light-grey;
+    margin-right: 10px;
+    &:hover {
+      color: $darkslate-color;
+    }
+  }
+  display: none;
 }

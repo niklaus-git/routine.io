@@ -85,6 +85,17 @@
   }
 }
 
+.btn-routine-preview {
+  color: #FFF;
+  fill: #FFF;
+  background: $scooter-color;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #55A1AC;
+    color: #FFF;
+  }
+}
+
 .btn-routine-submit {
   color: #FFF;
   fill: #FFF;

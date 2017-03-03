@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_routine
+  before_action :set_question, only: [:edit, :update]
 
   def index
     @questions = @routine.questions
@@ -30,16 +31,32 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    if @question.update(question_params)
+      respond_to do |format|
+        format.html { redirect_to routine_questions_path(@routine) }
+        format.js
+      end
+    end
   end
 
   def destroy
+    update_positions
   end
 
   def set_routine
     @routine = Routine.find(params[:routine_id])
   end
 
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
   def question_params
     params.require(:question).permit(:name, :question_type_id)
+  end
+
+  private
+
+  def update_positions
   end
 end
