@@ -6,9 +6,8 @@
       <%= link_to "Long Text", new_routine_question_path(@routine, question_type_name: "long text"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <%= link_to "Multiple Choice", new_routine_question_path(@routine, question_type_name: "multiple choice"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <%= link_to "Rating/Scale", new_routine_question_path(@routine, question_type_name: "scale"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
-      <%= link_to "Yes/No", new_routine_question_path(@routine, question_type_name: "yes/no"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Yes/No", new_routine_question_path(@routine, question_type_name: "yes-no"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <%= link_to "Numbers", new_routine_question_path(@routine, question_type_name: "number"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
-      <%= link_to "Time Period", new_routine_question_path(@routine, question_type_name: "time periods"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <div class="btn btn-routine btn-signup-submit btn-full-w">Use Template</div>
     </div>
   </div>
@@ -36,7 +35,11 @@
   <div class="modal-dialog">
     <div class="modal-content preview-content text-center">
       <h2><%= @routine.name %></h2>
-      <%= render @questions %>
+      <ul class="questions">
+        <% @questions.each do |question| %>
+          <%= render "forms/#{question.type.gsub(" ", "_")}", question: question  %>
+        <% end %>
+      </ul>
       <div class="spacer"></div>
       <%= link_to "Submit Routine", submit_routine_path(@routine), id: "submit-button", class: "btn btn-routine btn-signup-submit btn-pill" %>
       <div id="continue-button" class="btn btn-routine btn-signup-submit btn-pill">Continue Editing</div>
