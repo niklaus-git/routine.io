@@ -1,10 +1,6 @@
 <div class="question-row">
     <div class="question-box question-position"><%= question.position %></div>
     <div class="question-box question-name"><%= question.name %>
-      <!-- not sure about the arguments for the path -->
-      <%= link_to routine_question_path(@routine, @id), method: :delete, remote: true do %>
-      <i class="material-icons">delete</i>
-      <% end %>
     </div>
 </div>
 
