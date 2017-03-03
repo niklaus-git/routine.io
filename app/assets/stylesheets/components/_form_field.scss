@@ -1,78 +1,80 @@
-#answer-form {
-  .questions {
-    .list {
-      ul {
-        margin-left: -3px;
-        display: block;
-        outline: none;
-        text-align: left;
+.questions {
+  a {
+    text-decoration: none;
+  }
+  .list {
+    ul {
+      margin-left: -3px;
+      display: block;
+      outline: none;
+      text-align: left;
+      list-style: none;
+      li {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid $border-line;
+        background: $extra-light-grey;
+        width: 50%;
+        cursor: pointer;
         list-style: none;
-        li {
-          margin-top: 10px;
-          padding: 10px;
-          border: 1px solid $border-line;
-          background: $extra-light-grey;
-          width: 50%;
-          cursor: pointer;
-          list-style: none;
-          &:hover{
-            background: $form-hover;
-          }
-          .label {
-            color: $routine-color;
-            font-weight: lighter;
-          }
+        &:hover{
+          background: $form-hover;
+        }
+        .label {
+          color: $routine-color;
+          font-weight: lighter;
         }
       }
     }
-    li {
-      margin-top: 30px;
-      &.active {
-        display: block;
-      }
-      &.focus {
-        opacity: 1;
-        input {
-          border-bottom: 1px dashed $routine-color;
-        }
-        .textarea {
-          border-left: 1px dashed $routine-color;
-        }
-      }
-      &.wrapper {
-        padding: 30px 20px 30px 0;
-      }
-      .input {
-        margin-top: 20px;
-        margin-left: 50px;
-        padding: 3px 5px 0 5px;
-      }
+  }
+  li {
+    margin-top: 30px;
+    &.active {
+      display: block;
+    }
+    &.focus {
+      opacity: 1;
       input {
-        background: none;
-        border: none;
-        width: 100%;
-        &:focus {
-          color: $routine-color;
-          outline: none;
-        }
+        border-bottom: 1px dashed $routine-color;
       }
       .textarea {
-        margin-top: 20px;
-        margin-left: 50px;
-        padding: 3px 5px 0 3px;
+        border-left: 1px dashed $routine-color;
+        text-align: left;
       }
-      textarea {
-        overflow: hidden;
-        word-wrap: break-word;
-        resize: none;
-        height: 92px;
-        background: none;
-        border: none;
-        width: 100%;
-        &:focus {
-          color: $routine-color;
-          outline: none;
-        }
+    }
+    &.wrapper {
+      padding: 30px 20px 30px 0;
+    }
+    .input {
+      margin-top: 20px;
+      margin-left: 50px;
+      padding: 3px 5px 0 5px;
+    }
+    input {
+      background: none;
+      border: none;
+      width: 100%;
+      &:focus {
+        color: $routine-color;
+        outline: none;
+      }
+    }
+    .textarea {
+      margin-top: 20px;
+      margin-left: 50px;
+      padding: 3px 5px 0 3px;
+    }
+    textarea {
+      overflow: hidden;
+      word-wrap: break-word;
+      resize: none;
+      height: 92px;
+      background: none;
+      border: none;
+      width: 100%;
+      &:focus {
+        color: $routine-color;
+        outline: none;
       }
     }
   }

@@ -30,7 +30,7 @@ class RoutinesController < ApplicationController
   end
 
   def submit
-    @answer = @routine.answers.create
+    prepare_answer
     redirect_to answer_fields_path(@answer)
   end
 
@@ -40,5 +40,13 @@ class RoutinesController < ApplicationController
 
   def routine_params
     params.require(:routine).permit(:name)
+  end
+
+  def prepare_answer
+    @answer = @routine.answers.create
+    @routine.questions.each do |question|
+      field = @answer.fields.new(question_id: question.id, answer_id: @answer.id)
+      field.save
+    end
   end
 end

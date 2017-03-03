@@ -7,7 +7,7 @@
   <div class="multiple list">
     <ul class="columns">
       <% question.question_choices.each do |choice| %>
-        <%= render 'forms/choice', choice: choice %>
+        <%= render 'forms/choice', question: question, choice: choice %>
       <% end %>
     </ul>
   </div>
