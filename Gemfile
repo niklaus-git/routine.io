@@ -8,6 +8,8 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
+gem "letter_opener", group: :development
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -24,10 +26,10 @@ gem 'omniauth-github'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'

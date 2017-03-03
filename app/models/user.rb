@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :routines
   has_many :authorizations
 
+  after_create :send_welcome_email
+
   def member_since
     self.created_at.strftime("%-d %b, %Y")
   end
@@ -96,5 +98,11 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
   end
 end
