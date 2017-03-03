@@ -36,7 +36,7 @@ ul.social-footer {
     transition: all .3s;
 
     :hover,:focus,:active {
-      color: black;
+      color: $scooter-color;
     }
   }
 }
@@ -52,6 +52,6 @@ footer ul a {
 
 a:hover{
   text-decoration: none;
-  color: black;
+  color: $scooter-color;
 }
 
