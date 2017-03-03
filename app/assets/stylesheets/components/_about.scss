@@ -16,9 +16,6 @@
   color: white;
 }
 
-.link-h3:hover{
-  color: $scooter-color;
-}
 .timeline:before {
   top: 0;
   bottom: 20px;
@@ -71,6 +68,14 @@
   border-radius: 100%;
   border: 7px solid #f8f8f8;
   text-align: center;
+}
+
+#timeline-image-link {
+  color: white;
+  &:hover {
+    color: white;
+    background: $scooter-color;
+  }
 }
 
 .timeline h4{
