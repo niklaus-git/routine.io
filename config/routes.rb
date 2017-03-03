@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -12,8 +13,15 @@ Rails.application.routes.draw do
 
   resources :routines do
     member do
-      get 'activate'
+      get 'submit'
     end
     resources :questions
   end
+
+  resources :answers do
+    resources :fields
+    put 'save', to: 'fields#save', as: :save
+  end
+
+
 end

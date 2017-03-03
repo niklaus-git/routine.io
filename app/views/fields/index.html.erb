@@ -1,0 +1,19 @@
+<div class="routine-subnav">
+  <div class="subnav-row">
+    <%= inline_svg("arrow_left.svg", class: "navigation-arrow") %>
+    <div class="subnav-body"><h1><%= @routine.name %><h1></div>
+    <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
+  </div>
+</div>
+<div class="answer-form-container">
+  <h2>
+    <%= current_user.greetings %>
+  </h2>
+  <div id="answer-form">
+    <ul class="questions">
+      <% @routine.questions.each do | question| %>
+        <%= render "forms/#{question.type.gsub(" ", "_")}", question: question %>
+      <% end %>
+    </ul>
+  </div>
+</div>

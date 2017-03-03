@@ -1,5 +1,4 @@
 class Answer < ApplicationRecord
-  belongs_to :question
-
-  validates :answer, presence: true
+  belongs_to :routine
+  has_many :fields
 end

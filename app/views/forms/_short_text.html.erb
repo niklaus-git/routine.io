@@ -1,0 +1,13 @@
+<li id=<%= "#{question.id}" %> class="active focus">
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Input -->
+  <div class="input">
+    <input type="text" autocomplete="off">
+  </div>
+
+  <div class="btn-enter">press <strong>ENTER</strong></div>
+
+</li>
