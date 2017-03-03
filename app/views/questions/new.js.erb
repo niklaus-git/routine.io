@@ -1,0 +1,6 @@
+  $('#new-question').modal("show");
+  $('.new-question-body').append('<%= j render "questions/new" %>');
+  $('#new-question').on("hidden.bs.modal", function(){
+    $(".new-question-body").html("");
+});
+

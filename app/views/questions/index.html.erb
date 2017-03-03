@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <div class="routine-sidebar text-center">
       <h3>Select Form Fields</h3>
-      <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+      <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <%= link_to "Long Text", new_routine_question_path(@routine, question_type_name: "long text"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <%= link_to "Multiple Choice", new_routine_question_path(@routine, question_type_name: "multiple choice"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
       <%= link_to "Rating/Scale", new_routine_question_path(@routine, question_type_name: "scale"), class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
@@ -20,13 +20,30 @@
           Click the form fields on the left to get started
         </div>
       <% else %>
-        <%= render @questions %>
+        <div id="routine-questions">
+          <%= render @questions %>
+        </div>
       <% end %>
+
       </div>
+
+      <div id="ajax-test"></div>
+
       <div class="spacer"></div>
       <%= link_to "#routine-preview", id: "preview-button", class: "btn btn-routine btn-scooter-light btn-circle btn-shadow-circle svg-icon", "data-toggle": "modal"  do %>
         <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
       <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="new-question">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="container new-question-body">
+
+      </div>
     </div>
   </div>
 </div>

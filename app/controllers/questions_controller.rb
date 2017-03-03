@@ -8,13 +8,19 @@ class QuestionsController < ApplicationController
   def new
     @question_type = QuestionType.find_by_name(params[:question_type_name])
     @question = @routine.questions.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
     @question = @routine.questions.new(question_params)
     @question.position = @routine.questions.count + 1
     if @question.save
-      redirect_to routine_questions_path(@routine)
+      respond_to do |format|
+        format.html { redirect_to routine_questions_path(@routine) }
+        format.js
+      end
     else
       render :new
     end
