@@ -2,3 +2,4 @@ $('#new-question').modal("hide");
 $('.new-question-container').remove();
 $(<%= "#question-#{@question.id}" %>).replaceWith('<%= j render @question %>');
 $(<%= "#{@question.id}" %>).replaceWith('<%= j render "forms/#{@question.type.gsub(" ", "_")}", question: @question %>')
+

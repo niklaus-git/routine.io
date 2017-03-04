@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_routine
-  before_action :set_question, only: [:edit, :update]
+  before_action :set_question, only: [:edit, :update, :destroy]
 
   def index
     @questions = @routine.questions
@@ -40,7 +40,12 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    update_positions
+    @question.delete
+    @questions = @routine.questions
+    @questions.each_with_index do |question, index|
+      question.position = index + 1
+      question.save
+    end
   end
 
   def set_routine
@@ -55,8 +60,4 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:name, :question_type_id)
   end
 
-  private
-
-  def update_positions
-  end
 end
