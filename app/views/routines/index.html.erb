@@ -1,1 +1,8 @@
-<h1>Yay i solved the issue</h1>
+<h1>My Routines</h1>
+<ul>
+  <% @routines.each do |routine| %>
+    <li>
+      <%= link_to "#{routine.name}", routine_editor_path(routine) %>
+    </li>
+  <% end %>
+</ul>

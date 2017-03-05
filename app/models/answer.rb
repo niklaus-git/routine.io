@@ -1,6 +1,6 @@
 class Answer < ApplicationRecord
   belongs_to :routine
-  has_many :fields
+  has_many :fields, dependent: :destroy
 
   def exists?(question)
     results = self.fields.where(question_id: question.id)

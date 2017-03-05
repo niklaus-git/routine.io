@@ -1,11 +1,21 @@
 #new-question {
   width: 75%;
   margin: 0 auto;
+  .modal-dialog {
+    margin-top: 20vh;
+    width: 100%;
+  }
 }
+
+.new-question-body {
+  padding: 20px;
+}
+
+.queston-container
 
 .new-question-container {
   padding: 20px;
   .name-input {
-    width: 500px;
+    width: 60%;
   }
 }

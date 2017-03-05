@@ -50,6 +50,7 @@
       margin-top: 20px;
       margin-left: 50px;
       padding: 3px 5px 0 3px;
+      text-align: left;
     }
     textarea {
       overflow: hidden;
@@ -137,10 +138,13 @@
   }
   .textarea {
     border-left: 1px dashed $routine-color;
-    text-align: left;
   }
   }
 
 .inactive {
   opacity: 0.2;
+}
+
+.answer {
+  background: $form-hover !important;
 }

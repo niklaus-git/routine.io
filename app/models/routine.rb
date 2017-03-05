@@ -1,6 +1,8 @@
 class Routine < ApplicationRecord
-  has_many :questions, dependent: :destroy
-  has_many :answers, dependent: :destroy
+  has_many :questions, dependent: :delete_all
+  has_many :answers, dependent: :delete_all
+  has_many :question_choices, through: :questions, dependent: :delete_all
+  has_many :fields, through: :answers, dependent: :delete_all
 
   validates :name, uniqueness: { case_sensitive: false, scope: :user_id }, presence: true
 
