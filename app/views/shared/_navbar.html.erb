@@ -8,13 +8,12 @@
   <div class="navbar-routine-right hidden-xs hidden-sm">
 
     <!-- Different navigation if user logged in or not -->
-    <div class="nav navbar-nav navbar-right">
+    <div class="nav navbar-nav navbar-right carret">
       <% if user_signed_in? %>
         <!-- Profile picture and dropdown -->
         <div class="navbar-routine-item">
           <div class="dropdown">
             <%= image_tag avatar_url(current_user), class: "avatar-large dropdown-toggle", id: "navbar-routine-menu", "data-toggle" => "dropdown" %>
-
             <ul class="dropdown-menu dropdown-menu-right navbar-routine-dropdown-menu">
               <li>
                 <%= link_to "Edit Profile", edit_user_registration_path(current_user) %>

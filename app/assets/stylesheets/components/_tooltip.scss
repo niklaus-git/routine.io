@@ -1,0 +1,54 @@
+[class^="tooltip"] {
+  position: relative;
+  &:after {
+    font-size: 0.7em;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    content: attr(titletool);
+    padding: 3px 7px;
+    bottom: 2.5em;
+    left: 50%;
+    transform: translateX(-50%) translateY(-2px);
+    background: $scooter-color;
+    color: white;
+    white-space: nowrap;
+    z-index: 2;
+    border-radius: 2px;
+    transition: width 1s, height 1s;
+  }
+  &:hover {
+    &:after {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
+.tooltip--triangle {
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: solid 7px transparent;
+    border-right: solid 7px transparent;
+    border-top: solid 7px $scooter-color;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(-50%) translateY(-2px);
+    bottom: 1.35em;
+    left: 50%;
+    transition: width 1s, height 1s;
+    z-index: 5;
+  }
+  &:hover {
+    &:before {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
