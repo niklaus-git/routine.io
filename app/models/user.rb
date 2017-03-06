@@ -10,7 +10,7 @@ class User < ApplicationRecord
   after_create :send_welcome_email
 
   def member_since
-    self.created_at.strftime("%-d %b, %Y")
+    self.created_at.strftime("%-d %B %Y")
   end
 
   def greetings

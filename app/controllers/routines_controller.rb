@@ -32,9 +32,6 @@ class RoutinesController < ApplicationController
 
   def submit
     @answer = @routine.today
-    @routine.questions.each do |question|
-        field = @answer.new_question(question) unless @answer.exists?(question)
-    end
     redirect_to answer_fields_path(@answer)
   end
 

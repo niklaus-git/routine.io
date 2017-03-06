@@ -1,14 +1,23 @@
 <div class="routine-subnav">
   <div class="subnav-row">
-    <%= inline_svg("arrow_left.svg", class: "navigation-arrow") %>
+    <%= link_to answer_fields_path(@routine.previous_day(@answer.created_at)) do %>
+      <%= inline_svg("arrow_left.svg", class: "navigation-arrow") %>
+    <% end %>
     <div class="subnav-body"><h1><%= @routine.name %><h1></div>
-    <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
+    <% if @answer.today? %>
+      <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
+    <% else %>
+      <%= link_to answer_fields_path(@routine.next_day(@answer.created_at)) do %>
+        <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 <div class="answer-form-container">
   <h2>
     <%= current_user.greetings %>
   </h2>
+  <p>Your answers for <%= @answer.date %></p>
   <div id="answer-form">
     <%= form_tag("/answers/#{@answer.id}", method: :patch) %>
     <ul class="questions">
