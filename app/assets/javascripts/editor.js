@@ -26,11 +26,21 @@ $('#routine-questions').sortable().bind('sortupdate', function(e, ui){
       updated_order.push({ id: $(this).data("id"), position: i+1 });
   });
 
+  routine = $("#routine-questions").data("routine");
+
   // send the updated order via ajax
   $.ajax({
       type: "PUT",
       url: '/sort',
-      data: { order: updated_order }
+      data: { order: updated_order, routine_id: routine }
   });
 
 });
+
+if ($('.question-row').length == 0) {
+  $('#preview-button').prop('disabled', true);
+} else {
+  $('#preview-button').prop('disabled', false);
+};
+
+

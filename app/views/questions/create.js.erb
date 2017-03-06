@@ -3,3 +3,10 @@ $('.new-question-container').remove();
 $('#editor-info').hide();
 $('#routine-questions').append('<%= j render @question %>');
 $('ul.questions').append('<%= j render "forms/#{@question.type.gsub(" ", "_")}", question: @question %>')
+$('.question-item:first').removeClass('inactive').addClass('focus');
+$('.focus input, .focus textarea').focus();
+if ($('.question-row').length == 0) {
+  $('#preview-button').prop('disabled', true);
+} else {
+  $('#preview-button').prop('disabled', false);
+};

@@ -132,7 +132,7 @@
 }
 
 .focus {
-  // opacity: 1;
+  opacity: 1;
   input {
     border-bottom: 1px dashed $routine-color !important;
   }
@@ -142,7 +142,7 @@
   }
 
 .inactive {
-  // opacity: 0.2;
+  opacity: 0.4;
 }
 
 .answer {

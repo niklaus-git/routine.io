@@ -1,8 +1,16 @@
+$('ul.questions').empty();
 <% if @questions.empty? %>
   $("#routine-questions").empty();
   $('#editor-info').show();
+  $('#preview-button').prop('disabled', true);
 <% else %>
   var new_render= $('<%= j render @questions %>');
   $("#routine-questions").html(new_render);
+  <% @questions.each do |question| %>
+    $('ul.questions').append('<%= j render "forms/#{question.type.gsub(" ", "_")}", question: question  %>')
+  <% end %>
+  $('.question-item:first').removeClass('inactive').addClass('focus');
+  $('.focus input, .focus textarea').focus();
+  $('#preview-button').prop('disabled', false);
 <% end %>
 

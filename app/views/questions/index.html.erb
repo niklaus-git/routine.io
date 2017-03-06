@@ -28,9 +28,9 @@
         <div id="editor-info">
           Click the form fields on the left to get started
         </div>
-          <div id="routine-questions"></div>
+          <div id="routine-questions" data-routine="<%= @routine.id %>"></div>
       <% else %>
-        <div id="routine-questions">
+        <div id="routine-questions" data-routine="<%= @routine.id %>">
           <%= render @questions %>
         </div>
       <% end %>

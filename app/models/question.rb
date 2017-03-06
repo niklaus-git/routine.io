@@ -4,7 +4,7 @@ class Question < ApplicationRecord
 
   has_many :question_choices, dependent: :destroy
 
-  # validates :name, uniqueness: { case_sensitive: false, scope: :routine_id }, presence: true
+  validates :name, uniqueness: { case_sensitive: false, scope: :routine_id }, presence: true
 
   def type
     self.question_type.name

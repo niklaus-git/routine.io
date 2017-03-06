@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
-  before_action :set_routine, except:[:sort]
+  before_action :set_routine
   before_action :set_question, only: [:edit, :update, :destroy]
 
   def index
-    @questions = @routine.questions
+    @questions = @routine.questions.order(:position)
   end
 
   def new
@@ -17,13 +17,13 @@ class QuestionsController < ApplicationController
   def create
     @question = @routine.questions.new(question_params)
     @question.position = @routine.questions.count + 1
-    if @question.save
-      respond_to do |format|
+    respond_to do |format|
+      if @question.save
         format.html { redirect_to routine_questions_path(@routine) }
         format.js
+      else
+        format.html { render :new }
       end
-    else
-      render :new
     end
   end
 
@@ -35,6 +35,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
+      @questions = @routine.questions.order(:position)
       respond_to do |format|
         format.html { redirect_to routine_questions_path(@routine) }
         format.js
@@ -57,7 +58,10 @@ class QuestionsController < ApplicationController
     params[:order].each do |key,value|
       Question.find(value[:id]).update_attribute(:position,value[:position])
     end
-    render :nothing => true
+    @questions = @routine.questions.order(:position)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def set_routine
