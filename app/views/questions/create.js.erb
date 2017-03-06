@@ -1,5 +1,5 @@
 $('#new-question').modal("hide");
 $('.new-question-container').remove();
-$('#editor-info').remove();
+$('#editor-info').hide();
 $('#routine-questions').append('<%= j render @question %>');
 $('ul.questions').append('<%= j render "forms/#{@question.type.gsub(" ", "_")}", question: @question %>')
