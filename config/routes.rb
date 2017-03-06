@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'team', to: 'pages#team'
 
-  get 'test', to: 'pages#test'
+  put 'sort', to: 'questions#sort'
 
   resources :routines do
     member do

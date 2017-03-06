@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_routine
+  before_action :set_routine, except:[:sort]
   before_action :set_question, only: [:edit, :update, :destroy]
 
   def index
@@ -28,6 +28,9 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
@@ -36,6 +39,8 @@ class QuestionsController < ApplicationController
         format.html { redirect_to routine_questions_path(@routine) }
         format.js
       end
+    else
+      render :edit
     end
   end
 
@@ -46,6 +51,13 @@ class QuestionsController < ApplicationController
       question.position = index + 1
       question.save
     end
+  end
+
+  def sort
+    params[:order].each do |key,value|
+      Question.find(value[:id]).update_attribute(:position,value[:position])
+    end
+    render :nothing => true
   end
 
   def set_routine
