@@ -1,0 +1,15 @@
+<% @routines.each do |routine| %>
+<div class="question-box question-body">
+      <div class="question-name">
+        <%= routine.name %>
+      </div>
+      <div class="question-tools">
+        <%= link_to routine_editor_path(routine), class: "tooltip--triangle", target: 'blank',titletool:'Edit your Routine', 'data-toggle' => 'tooltip'  do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to answer_fields_path(routine.today), class: "tooltip--triangle", target: 'blank',titletool: 'Add your Answers', 'data-toggle' => 'tooltip' do %>
+          <i class="fa fa-list-ol" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    </div>
+<% end %>
