@@ -5,18 +5,40 @@
 
   <!-- User Input -->
   <div class="scale">
+    <% defined?(@answer) ? value = Field.stored_answer(@answer.id, question.id) : value = "" %>
     <ul class="scale-columns">
-      <li class="choice"><div class="label">1</div></li>
-      <li class="choice"><div class="label">2</div></li>
-      <li class="choice"><div class="label">3</div></li>
-      <li class="choice"><div class="label">4</div></li>
-      <li class="choice"><div class="label">5</div></li>
-      <li class="choice"><div class="label">6</div></li>
-      <li class="choice"><div class="label">7</div></li>
-      <li class="choice"><div class="label">8</div></li>
-      <li class="choice"><div class="label">9</div></li>
-      <li class="choice"><div class="label">10</div></li>
+      <li class="choice <%= "answer" if value == "1" %>">
+        <div class="label">1</div>
+      </li>
+      <li class="choice <%= "answer" if value == "2" %>">
+        <div class="label">2</div>
+      </li>
+      <li class="choice <%= "answer" if value == "3" %>">
+        <div class="label">3</div>
+      </li>
+      <li class="choice <%= "answer" if value == "4" %>">
+        <div class="label">4</div>
+      </li>
+      <li class="choice <%= "answer" if value == "5" %>">
+        <div class="label">5</div>
+      </li>
+      <li class="choice <%= "answer" if value == "6" %>">
+        <div class="label">6</div>
+      </li>
+      <li class="choice <%= "answer" if value == "7" %>">
+        <div class="label">7</div>
+      </li>
+      <li class="choice <%= "answer" if value == "8" %>">
+        <div class="label">8</div>
+      </li>
+      <li class="choice <%= "answer" if value == "9" %>">
+        <div class="label">9</div>
+      </li>
+      <li class="choice <%= "answer" if value == "10" %>">
+        <div class="label">10</div>
+      </li>
     </ul>
+    <input type="hidden" name=<%= "#{question.id}"%> value='<%= value %>'>
   </div>
 
 </li>

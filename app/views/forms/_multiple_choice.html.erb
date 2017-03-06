@@ -10,6 +10,7 @@
         <%= render 'forms/choice', question: question, choice: choice %>
       <% end %>
     </ul>
+    <input type="hidden" name=<%= "#{question.id}"%> value='<%= Field.stored_answer(@answer.id, question.id) if defined?(@answer) %>'>
   </div>
 
 </li>
