@@ -2,6 +2,7 @@ class RoutinesController < ApplicationController
   before_action :set_routine, only: [:show, :edit, :update, :destroy, :submit]
 
   def index
+    @routines = current_user.routines
   end
 
   def new
@@ -11,7 +12,7 @@ class RoutinesController < ApplicationController
   def create
     @routine = current_user.routines.new(routine_params)
     if @routine.save
-      redirect_to routine_questions_path(@routine)
+      redirect_to routine_editor_path(@routine)
     else
       render :new
     end

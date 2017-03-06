@@ -1,11 +1,11 @@
-<li id=<%= "#{question.id}" %> class="active focus">
+<li id=<%= "#{question.id}" %> class="question-item inactive short-text">
 
   <!-- Question Header -->
   <%= render 'forms/qheader', question: question %>
 
   <!-- User Input -->
   <div class="input">
-    <input type="text" autocomplete="off">
+    <input type="text" autocomplete="off" name=<%= "#{question.id}"%> value='<%= Field.stored_answer(@answer.id, question.id) if defined?(@answer) %>'>
   </div>
 
   <div class="btn-enter">press <strong>ENTER</strong></div>

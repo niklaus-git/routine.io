@@ -10,10 +10,15 @@
     <%= current_user.greetings %>
   </h2>
   <div id="answer-form">
+    <%= form_tag("/answers/#{@answer.id}", method: :patch) %>
     <ul class="questions">
       <% @routine.questions.each do | question| %>
         <%= render "forms/#{question.type.gsub(" ", "_")}", question: question %>
       <% end %>
     </ul>
+    <button type="submit" class="btn btn-routine btn-signup-submit">
+            <span>Save</span>
+    </button>
+    </form>
   </div>
 </div>

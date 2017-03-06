@@ -1,10 +1,35 @@
-<div class="new-question-container">
-  <%= simple_form_for [@routine, @question], remote: true do |f| %>
-  <%= f.input :name, input_html: { class: "name-input" } %>
-  <%= f.hidden_field :question_type_id, value: @question_type.id %>
-  <div>
-    <%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
-    <div class="btn btn-routine btn-scooter-light" data-dismiss="modal">Cancel</div>
+<% if @question_type.name == 'multiple choice' %>
+  <div class="row">
+    <div class="col-md-4">
+      <div id="#question-container">
+        <%= simple_form_for [@routine, @question], remote: true do |f| %>
+          <%= f.input :name, input_html: { class: "name-input" } %>
+          <%= f.hidden_field :question_type_id, value: @question_type.id %>
+          <div>
+            <%= f.button :submit, 'Save', class: "btn btn-routine btn-scooter-light" %>
+            <div class="btn btn-routine btn-scooter-light" data-dismiss="modal">Cancel</div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="#question-options"></div>
+    </div>
   </div>
-  <% end %>
-</div>
+
+
+<% else %>
+
+  <div class="new-question-container">
+    <%= simple_form_for [@routine, @question], remote: true do |f| %>
+    <%= f.input :name, input_html: { class: "name-input" } %>
+    <%= f.hidden_field :question_type_id, value: @question_type.id %>
+    <div>
+      <%= f.button :submit, 'Save', class: "btn btn-routine btn-scooter-light" %>
+      <div class="btn btn-routine btn-scooter-light" data-dismiss="modal">Cancel</div>
+    </div>
+    <% end %>
+  </div>
+
+
+<% end %>

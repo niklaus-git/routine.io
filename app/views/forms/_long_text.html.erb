@@ -1,4 +1,4 @@
-<li id=<%= "#{question.id}" %> class="active focus">
+<li id=<%= "#{question.id}" %> class="question-item inactive long-text">
 
   <!-- Question Header -->
   <%= render 'forms/qheader', question: question %>
@@ -8,7 +8,7 @@
     <span class="question-tip">
       Press <strong>SHIFT + ENTER</strong> to add a paragraph
     </span>
-    <textarea autocomplete="off"></textarea>
+    <textarea autocomplete="off" name=<%= "#{question.id}"%> ><%= Field.stored_answer(@answer.id, question.id) if defined?(@answer) %></textarea>
   </div>
 
   <div class="btn-enter">press <strong>ENTER</strong></div>

@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     member do
       get 'submit'
     end
-    resources :questions
+    resources :questions, except: [:index]
+    get 'editor', to: 'questions#index'
   end
 
   resources :answers do

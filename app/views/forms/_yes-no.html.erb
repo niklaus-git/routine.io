@@ -1,20 +1,20 @@
-<li id=<%= "#{question.id}" %> class="active focus">
+<li id=<%= "#{question.id}" %> class="question-item inactive">
 
   <!-- Question Header -->
   <%= render 'forms/qheader', question: question %>
 
   <!-- User Input -->
   <div class="yes-no list">
+    <% defined?(@answer) ? value = Field.stored_answer(@answer.id, question.id) : value = "" %>
     <ul class="columns">
-      <li>
-        <input type="hidden" name="value" value="yes" autocomplete="off">
+      <li class="choice <%= "answer" if value == "yes" %>">
         <span class="label">Yes</span>
       </li>
-      <li>
-        <input type="hidden" name="value" value="no" autocomplete="off">
+      <li class="choice <%= "answer" if value == "no" %>">
         <span class="label">No</span>
       </li>
     </ul>
+    <input type="hidden" name=<%= "#{question.id}"%> value='<%= value %>'>
   </div>
 
 </li>
