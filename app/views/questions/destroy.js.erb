@@ -1,2 +1,5 @@
 $("#routine-questions").replaceWith('<%= j render @questions %>');
+<% if @questions.empty? %>
+  $('#editor-info').show();
+<% end %>
 

@@ -1,8 +1,17 @@
 <h1>My Routines</h1>
-<ul>
-  <% @routines.each do |routine| %>
-    <li>
-      <%= link_to "#{routine.name}", routine_editor_path(routine) %>
-    </li>
-  <% end %>
-</ul>
+<% @routines.each do |routine| %>
+<div class="question-box question-body">
+      <div class="question-name">
+        <%= routine.name %>
+      </div>
+      <div class="question-tools">
+        <%= link_to routine_editor_path(routine), title: 'Edit Routine', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to answer_fields_path(routine.today), title: 'Preview Routine', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' do %>
+          <i class="fa fa-list-ol" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
