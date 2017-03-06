@@ -6,7 +6,4 @@ class PagesController < ApplicationController
 
   def team
   end
-
-  def test
-  end
 end

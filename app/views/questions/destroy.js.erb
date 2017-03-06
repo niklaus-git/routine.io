@@ -1,5 +1,8 @@
-$("#routine-questions").replaceWith('<%= j render @questions %>');
 <% if @questions.empty? %>
+  $("#routine-questions").empty();
   $('#editor-info').show();
+<% else %>
+  var new_render= $('<%= j render @questions %>');
+  $("#routine-questions").html(new_render);
 <% end %>
 
