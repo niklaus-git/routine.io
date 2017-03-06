@@ -1,9 +1,26 @@
 <header>
   <div class="container-home">
-    <div class="intro-text">
-      <div class="intro-lead-in">Design Your Habits</div>
-      <div class="intro-heading">Become More Productive</div>
-      <%= link_to 'start a routine', new_routine_path, class: "page-scroll btn btn-routine btn-scooter-dark btn-upcase" %>
+    <div id="banner-left">
+      <div class="intro-text">
+        <div class="intro-lead-in">“there’s nothing you can’t do if you get the habits right.” </div>
+        <div id="quote-author">- Charles Duhigg, The Power of Habit</div>
+
+          <div class="intro-text"><ul>
+              <li>Create new habits using one of our templates </li>
+              <li>Review your progress easily</li>
+              <li>Edit and add habits in one click</li>
+            </ul>
+          </div>
+        <div class="btn-div">
+        <%= link_to 'start today', new_routine_path, class: "
+        page-scroll btn btn-routine btn-scooter-light btn-upcase"%>
+        </div>
+      </div>
+    </div>
+    <div id="banner-right">
+      <div id="img-container"></div>
     </div>
   </div>
 </header>
+
+
