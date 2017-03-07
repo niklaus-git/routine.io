@@ -27,6 +27,7 @@ gem 'omniauth-github'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'momentjs-rails'
+gem 'cocoon'
 
 
 group :development, :test do

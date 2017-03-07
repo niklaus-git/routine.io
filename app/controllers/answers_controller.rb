@@ -16,6 +16,8 @@ class AnswersController < ApplicationController
   end
 
   def update
+    @routine = @answer.routine
+    skip_authorization if @routine.user == current_user
     @answer.fields.each do |field|
       field.name = params["#{field.question_id}"]
       field.save
