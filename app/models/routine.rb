@@ -34,6 +34,16 @@ class Routine < ApplicationRecord
     return answer
   end
 
+  def go_to(date)
+    answer = self.answers.where(created_at: (date).beginning_of_day.utc..(date).end_of_day.utc).first_or_create!
+    answer.created_at = date
+    answer.save
+    self.questions.each do |question|
+      field = answer.new_question(question) unless answer.exists?(question)
+    end
+    return answer
+  end
+
   def exists?(question)
     results = self.answers.joins(:fields).where(fields: { question_id: question.id })
     results.empty? ? false : true

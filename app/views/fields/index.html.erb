@@ -4,6 +4,25 @@
       <%= inline_svg("arrow_left.svg", class: "navigation-arrow") %>
     <% end %>
     <div class="subnav-body"><h1><%= @routine.name %><h1></div>
+
+    <%= form_tag(answer_goto_path(@answer), method: :put, id: "datepicker") do %>
+      <input type="text" name="date" data-type="date" id="date-input" placeholder="Go to date" readOnly/>
+    <% end %>
+    <!-- <div id="material-header-holder" style="display:none">
+      <div class="ui-datepicker-material-header">
+        <div class="ui-datepicker-material-day">
+        </div>
+        <div class="ui-datepicker-material-date">
+          <div class="ui-datepicker-material-month">
+          </div>
+          <div class="ui-datepicker-material-day-num">
+          </div>
+          <div class="ui-datepicker-material-year">
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     <% if @answer.today? %>
       <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
     <% else %>
@@ -17,11 +36,11 @@
   <h2>
     <%= current_user.greetings %>
   </h2>
-  <p>Your answers for <%= @answer.date %></p>
+  <p>Your answers for <%= @answer.date %>:</p>
   <div id="answer-form">
     <%= form_tag("/answers/#{@answer.id}", method: :patch) %>
     <ul class="questions">
-      <% @routine.questions.each do | question| %>
+      <% @questions.each do | question| %>
         <%= render "forms/#{question.type.gsub(" ", "_")}", question: question %>
       <% end %>
     </ul>

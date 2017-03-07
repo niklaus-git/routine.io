@@ -3,6 +3,7 @@
     <div class="col-md-4">
       <div id="#question-container">
         <%= simple_form_for [@routine, @question], remote: true do |f| %>
+          <%= f.error_notification %>
           <%= f.input :name, input_html: { class: "name-input" } %>
           <%= f.hidden_field :question_type_id, value: @question_type.id %>
           <div>
