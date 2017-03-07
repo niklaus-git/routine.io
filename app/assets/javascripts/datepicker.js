@@ -53,7 +53,6 @@ $("input[data-type='date']").datepicker({
   dateFormat: 'dd/mm/yy',
   onSelect: function(date, inst) {
     changeMaterialHeader(headerHtml, moment(date, 'DD/MM/YYYY'));
-    console.log($(this).val());
     $('#datepicker').submit();
   },
 });
