@@ -12,7 +12,8 @@ set_positions = function(){
 
 set_positions();
 $('#routine-questions').sortable({
-  axis: 'y'
+  axis: 'y',
+  placeholder: 'sortable-placeholder'
 });
 $('#routine-questions').sortable().bind('sortupdate', function(e, ui){
   // array to store new order

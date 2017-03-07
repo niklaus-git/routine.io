@@ -47,12 +47,14 @@ $("input[data-type='date']").on("focus", function() {
 });
 
 $("input[data-type='date']").datepicker({
-  showButtonPanel: true,
+  showButtonPanel: false,
   closeText: 'OK',
   maxDate: 0,
   dateFormat: 'dd/mm/yy',
   onSelect: function(date, inst) {
     changeMaterialHeader(headerHtml, moment(date, 'DD/MM/YYYY'));
+    console.log($(this).val());
+    $('#datepicker').submit();
   },
 });
 

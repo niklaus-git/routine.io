@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :answers do
     resources :fields
     put 'save', to: 'fields#save', as: :save
+    put 'goto', to: 'fields#goto', as: :goto
   end
 
 

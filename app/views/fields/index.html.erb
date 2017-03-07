@@ -5,7 +5,9 @@
     <% end %>
     <div class="subnav-body"><h1><%= @routine.name %><h1></div>
 
-    <input type="text" data-type="date" id="date-input" placeholder="Go to date" />
+    <%= form_tag(answer_goto_path(@answer), method: :put, id: "datepicker") do %>
+      <input type="text" name="date" data-type="date" id="date-input" placeholder="Go to date" readOnly/>
+    <% end %>
     <!-- <div id="material-header-holder" style="display:none">
       <div class="ui-datepicker-material-header">
         <div class="ui-datepicker-material-day">
@@ -34,7 +36,7 @@
   <h2>
     <%= current_user.greetings %>
   </h2>
-  <p>Your answers for <%= @answer.date %></p>
+  <p>Your answers for <%= @answer.date %>:</p>
   <div id="answer-form">
     <%= form_tag("/answers/#{@answer.id}", method: :patch) %>
     <ul class="questions">

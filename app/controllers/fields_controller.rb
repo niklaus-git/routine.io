@@ -18,7 +18,11 @@ class FieldsController < ApplicationController
   end
 
   def update
+  end
 
+  def goto
+    @routine = @answer.routine
+    redirect_to answer_fields_path(@routine.go_to(params[:date].to_date))
   end
 
   def set_answer
