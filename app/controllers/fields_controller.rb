@@ -4,6 +4,8 @@ class FieldsController < ApplicationController
 
   def index
     @routine = @answer.routine
+    authorize @routine
+    skip_policy_scope if @routine.user == current_user
     @questions = @routine.questions.order(:position)
   end
 
@@ -22,6 +24,7 @@ class FieldsController < ApplicationController
 
   def goto
     @routine = @answer.routine
+    skip_authorization if @routine.user == current_user
     redirect_to answer_fields_path(@routine.go_to(params[:date].to_date))
   end
 
