@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @routine.questions.order(:position)
+    skip_policy_scope if @routine.user == current_user
   end
 
   def new
@@ -66,6 +67,7 @@ class QuestionsController < ApplicationController
 
   def set_routine
     @routine = Routine.find(params[:routine_id])
+    authorize @routine
   end
 
   def set_question

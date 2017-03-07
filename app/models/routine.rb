@@ -1,4 +1,6 @@
 class Routine < ApplicationRecord
+  belongs_to :user
+
   has_many :questions, dependent: :delete_all
   has_many :answers, dependent: :delete_all
   has_many :question_choices, through: :questions, dependent: :delete_all
