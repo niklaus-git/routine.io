@@ -1,6 +1,78 @@
-<div class="routine-new">
-  <%= simple_form_for(@routine) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
-  <% end %>
+<div class="routine-tutorial-container">
+  <div class="row">
+    <div class="tutorial-title">
+      <h1>Create and use your Routine in 4 simple steps</h1>
+    </div>
+    <div class="col-md-6">
+      <div class="routine-new-form">
+        <%= simple_form_for(@routine) do |f| %>
+          <%= f.input :name, placeholder: "ex: My daily work Routine" %>
+          <%= f.button :submit,"Let's start!", class: "btn btn-routine   btn-scooter-light" %>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="row"></div>
+        <div class="routine-tutorial-step">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-inverse fa-stack-1x">1</i>
+          </span>
+          <div class="step-text">
+            <h2>Give a name to your Routine</h2>
+            <p>don't worry, you will be able to change the name later</p>
+          </div>
+        </div>
+
+        <div class="routine-tutorial-step">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-inverse fa-stack-1x">2</i>
+          </span>
+          <div class="step-text">
+            <h2>Select a template to create your Routine</h2>
+            <p>Our pre-existing templates are sets of habits designed to make you reach specific goals</p>
+          </div>
+        </div>
+
+        <div class="routine-tutorial-gif">
+          <%= image_tag 'demo-tutorial1.gif' %>
+        </div>
+
+
+        <div class="routine-tutorial-step">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-inverse fa-stack-1x">3</i>
+          </span>
+          <div class="step-text">
+            <h2>You can also add your own habits to track</h2>
+            <p>Click on one of the form fields on the left to add habits to track</p>
+          </div>
+        </div>
+
+        <div class="routine-tutorial-gif">
+          <%= image_tag 'demo-tutorial1.gif' %>
+        </div>
+
+
+        <div class="routine-tutorial-step">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-inverse fa-stack-1x">4</i>
+          </span>
+          <div class="step-text">
+            <h2>Edit, delete or move your habits around easily</h2>
+            <p>Click on the icons on the right to modify the question </p>
+          </div>
+        </div>
+
+        <div class="routine-tutorial-gif">
+          <%= image_tag 'demo-tutorial1.gif' %>
+        </div>
+    </div>
+  </div>
 </div>
+
