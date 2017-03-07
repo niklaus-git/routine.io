@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   def new
     @question_type = QuestionType.find_by_name(params[:question_type_name])
     @question = @routine.questions.new
+    @question.question_choices.build
     respond_to do |format|
       format.js
     end
@@ -75,7 +76,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:name, :question_type_id, question_choice_attributes: [:id, :name, :_destroy])
+    params.require(:question).permit(:name, :question_type_id, question_choices_attributes: [:id, :name, :_destroy])
   end
 
 end
