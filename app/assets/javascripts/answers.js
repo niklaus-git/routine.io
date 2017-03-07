@@ -85,5 +85,3 @@ $('.numbers input').keypress(function(e) {
             $(this).closest('li').effect('shake');
         }
 });
-
-

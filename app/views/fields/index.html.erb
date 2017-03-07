@@ -4,6 +4,23 @@
       <%= inline_svg("arrow_left.svg", class: "navigation-arrow") %>
     <% end %>
     <div class="subnav-body"><h1><%= @routine.name %><h1></div>
+
+    <input type="text" data-type="date" id="date-input" placeholder="Go to date" />
+    <!-- <div id="material-header-holder" style="display:none">
+      <div class="ui-datepicker-material-header">
+        <div class="ui-datepicker-material-day">
+        </div>
+        <div class="ui-datepicker-material-date">
+          <div class="ui-datepicker-material-month">
+          </div>
+          <div class="ui-datepicker-material-day-num">
+          </div>
+          <div class="ui-datepicker-material-year">
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     <% if @answer.today? %>
       <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
     <% else %>
@@ -21,7 +38,7 @@
   <div id="answer-form">
     <%= form_tag("/answers/#{@answer.id}", method: :patch) %>
     <ul class="questions">
-      <% @routine.questions.each do | question| %>
+      <% @questions.each do | question| %>
         <%= render "forms/#{question.type.gsub(" ", "_")}", question: question %>
       <% end %>
     </ul>

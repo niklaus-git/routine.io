@@ -4,6 +4,7 @@ class FieldsController < ApplicationController
 
   def index
     @routine = @answer.routine
+    @questions = @routine.questions.order(:position)
   end
 
   def new
