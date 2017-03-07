@@ -1,0 +1,31 @@
+.routine-tutorial-container {
+  width: 100%;
+  // display: flex;
+  // flex-wrap: wrap;
+  // position: relative;
+}
+
+.routine-tutorial-step{
+  text-align: center;
+  padding: 20px;
+}
+
+.routine-tutorial-gif{
+  text-align: center;
+  background-size: contain;
+  padding: 20px;
+
+}
+
+.step-text{
+  text-align: left;
+}
+
+.tutorial-title{
+  padding: 30px;
+  text-align: center;
+}
+
+.routine-new-form{
+  padding: 70px
+}

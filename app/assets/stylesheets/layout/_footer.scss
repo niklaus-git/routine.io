@@ -3,6 +3,7 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
  footer {
+  // position: fixed; //added by top to fix footer problem
   padding: 15px 0;
   text-align: center;
   background: $footer-bg;
