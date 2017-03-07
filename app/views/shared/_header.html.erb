@@ -1,25 +1,27 @@
 <header>
   <div class="container-home">
-    <div id="banner-left">
-      <div class="intro-text">
-        <div class="intro-lead-in">“there’s nothing you can’t do if you get the habits right.” </div>
-        <div id="quote-author">- Charles Duhigg, The Power of Habit</div>
-
-          <div class="intro-text"><ul>
-              <li>Create new habits using one of our templates </li>
-              <li>Review your progress easily</li>
-              <li>Edit and add habits in one click</li>
-            </ul>
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="container-left">
+          <div class="intro-text">
+            <div class="intro-lead-in">Create New Habits</div>
+            <div class="intro-heading">
+              Become more productive
+            </div>
           </div>
-        <div class="btn-div">
-        <%= link_to 'start today', new_routine_path, class: "
-        page-scroll btn btn-routine btn-scooter-light btn-upcase"%>
+          <%= link_to 'start today', new_routine_path, class: "btn btn-routine btn-scooter-light btn-upcase"%>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="banner-right">
+          <div><%= image_tag "computer.png", class: "banner-right" %></div>
         </div>
       </div>
     </div>
-    <div id="banner-right">
-      <div id="img-container"></div>
-    </div>
+    <hr>
+  </div>
+  <div class="row" style="margin-top: -70px;">
+    <p class="section-heading">How does it work?</p>
   </div>
 </header>
 
