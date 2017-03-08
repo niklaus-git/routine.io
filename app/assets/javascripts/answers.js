@@ -4,7 +4,7 @@ var choices = [],
 $('.question-item:first').removeClass('inactive').addClass('focus');
 $('.focus input, .focus textarea').focus();
 $(document).keydown(function(event) {
-    if (event.keyCode == 13 || event.which == 13) {
+    if (event.keyCode == 13 || event.which == 13 || event.keyCode == 9 || event.which == 9 ) {
       event.preventDefault();
       if (!$('.focus').is(':last-child')) {
         if (!event.shiftKey) {
