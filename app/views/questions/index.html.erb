@@ -62,6 +62,9 @@
 
 
   <div class="spacer"></div>
+  <% if current_user.admin? %>
+    <%= link_to "Save As Template", template_routine_path(@routine), method: :post, class: "btn btn-routine btn-scooter-light" %>
+  <% end %>
   <%= link_to "#routine-preview", id: "preview-button", class: "btn btn-routine btn-routine-preview btn-circle btn-shadow-circle svg-icon", "data-toggle": "modal" do %>
   <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
   <% end %>

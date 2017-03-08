@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :routines do
     member do
       get 'submit'
+      post 'template'
     end
     resources :questions, except: [:index]
     get 'editor', to: 'questions#index'

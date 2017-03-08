@@ -22,6 +22,9 @@
                 <%= link_to "My Routines", routines_path %>
               </li>
               <li>
+                <%= link_to "Add a Routine", new_routine_path %>
+              </li>
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <%= t(".sign_out", default: "Log Out") %>
                 <% end %>
