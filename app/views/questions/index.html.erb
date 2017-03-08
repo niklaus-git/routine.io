@@ -1,74 +1,97 @@
 <div class="row">
-  <div class="col-md-4">
-    <div class="routine-sidebar text-center">
-      <h3>Select Form Fields</h3>
+<div class="col-md-4">
+<div class="app-window">
+  <div class="tab-window">
+    <div class="tab-content">
+      <div class="tab">
+        <input type="radio" name="tab-group-1" id="tab-1" checked>
+        <label for="tab-1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+        <div class="content">
+          <div class="routine-sidebar text-center">
+            <h3>Select Form Fields</h3>
 
+            <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
-      <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <%= link_to "Long Text", new_routine_question_path(@routine, question_type_name: "long text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
+            <%= link_to "Multiple Choice", new_routine_question_path(@routine, question_type_name: "multiple choice"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
-      <%= link_to "Long Text", new_routine_question_path(@routine, question_type_name: "long text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <%= link_to "Rating/Scale", new_routine_question_path(@routine, question_type_name: "scale"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
-      <%= link_to "Multiple Choice", new_routine_question_path(@routine, question_type_name: "multiple choice"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <%= link_to "Yes/No", new_routine_question_path(@routine, question_type_name: "yes-no"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
-      <%= link_to "Rating/Scale", new_routine_question_path(@routine, question_type_name: "scale"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <%= link_to "Numbers", new_routine_question_path(@routine, question_type_name: "number"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
-      <%= link_to "Yes/No", new_routine_question_path(@routine, question_type_name: "yes-no"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
-
-      <%= link_to "Numbers", new_routine_question_path(@routine, question_type_name: "number"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
-
-      <div class="btn btn-routine btn-signup-submit btn-full-w">Use Template</div>
-    </div>
-  </div>
-  <div class="col-md-8 text-center">
-    <div class="routine-editor">
-      <h1><%= @routine.name %></h1>
-      <div id="questions-list">
-      <% if @questions.empty? %>
-        <div id="editor-info">
-          Click the form fields on the left to get started
+            <div class="btn btn-routine btn-signup-submit btn-full-w">Use Template</div>
+          </div>
         </div>
-          <div id="routine-questions" data-routine="<%= @routine.id %>"></div>
-      <% else %>
-        <div id="routine-questions" data-routine="<%= @routine.id %>">
-          <%= render @questions %>
-        </div>
-      <% end %>
-
       </div>
 
+      <div class="tab">
+        <input type="radio" name="tab-group-1" id="tab-2">
+        <label for="tab-2"><i class="fa fa-th-list" aria-hidden="true"></i></label>
+        <div class="content">
+          <div class="routine-sidebar text-center">
+            <h3>Select Templates</h3>
 
-
-      <div class="spacer"></div>
-      <%= link_to "#routine-preview", id: "preview-button", class: "btn btn-routine btn-routine-preview btn-circle btn-shadow-circle svg-icon", "data-toggle": "modal" do %>
-        <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
-      <% end %>
+            <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="col-md-8 text-center">
+<div class="routine-editor">
+  <h1><%= @routine.name %></h1>
+  <div id="questions-list">
+    <% if @questions.empty? %>
+    <div id="editor-info">
+      Click the form fields on the left to get started
+    </div>
+    <div id="routine-questions" data-routine="<%= @routine.id %>"></div>
+    <% else %>
+    <div id="routine-questions" data-routine="<%= @routine.id %>">
+      <%= render @questions %>
+    </div>
+    <% end %>
+  </div>
+
+
+  <div class="spacer"></div>
+  <%= link_to "#routine-preview", id: "preview-button", class: "btn btn-routine btn-routine-preview btn-circle btn-shadow-circle svg-icon", "data-toggle": "modal" do %>
+  <%= inline_svg("eye-icon.svg", class: "svg-icon") %>
+  <% end %>
+</div>
+</div>
 </div>
 
 
 <div class="modal fade" id="new-question">
-  <div class="modal-dialog">
-    <div class="modal-content text-center">
-      <div class="new-question-body">
-      </div>
-    </div>
+<div class="modal-dialog">
+<div class="modal-content text-center">
+  <div class="new-question-body">
   </div>
+</div>
+</div>
 </div>
 
 <div class="modal fade" id="routine-preview" title="Routine Preview">
-  <div class="modal-dialog">
-    <div class="modal-content preview-content text-center">
-      <h2><%= @routine.name %></h2>
-      <ul class="questions">
-        <% @questions.each do |question| %>
-          <%= render "forms/#{question.type.gsub(" ", "_")}", question: question  %>
-        <% end %>
-      </ul>
-      <div class="spacer"></div>
-      <%= link_to "Go To Answers", submit_routine_path(@routine), id: "submit-button", class: "btn btn-routine btn-routine-preview btn-pill" %>
-      <div id="continue-button" class="btn btn-routine btn-routine-preview btn-pill" data-dismiss="modal" >Continue Editing</div>
-    </div>
-  </div>
+<div class="modal-dialog">
+<div class="modal-content preview-content text-center">
+  <h2><%= @routine.name %></h2>
+  <ul class="questions">
+    <% @questions.each do |question| %>
+    <%= render "forms/#{question.type.gsub(" ", "_")}", question: question  %>
+    <% end %>
+  </ul>
+  <div class="spacer"></div>
+  <%= link_to "Go To Answers", submit_routine_path(@routine), id: "submit-button", class: "btn btn-routine btn-routine-preview btn-pill" %>
+  <div id="continue-button" class="btn btn-routine btn-routine-preview btn-pill" data-dismiss="modal" >Continue Editing</div>
+</div>
+</div>
+</div>
 </div>
