@@ -44,9 +44,12 @@
         <%= render "forms/#{question.type.gsub(" ", "_")}", question: question %>
       <% end %>
     </ul>
-    <button type="submit" class="btn btn-routine btn-signup-submit">
-            <span>Save</span>
-    </button>
+    <div id="buttons">
+      <button type="submit" class="btn btn-routine btn-pill  btn-scooter-light">
+              <span>Save</span>
+      </button>
+      <%= link_to "Edit Form", routine_editor_path(@routine), class: "btn btn-routine btn-pill btn-scooter-light"  %>
+    </div>
     </form>
   </div>
 </div>

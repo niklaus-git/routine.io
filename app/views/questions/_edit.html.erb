@@ -1,9 +1,48 @@
-<div class="new-question-container">
+<div id="questions-sidebar">
   <%= simple_form_for [@routine, @question], remote: true do |f| %>
-  <%= f.input :name, input_html: { class: "name-input" } %>
-  <div>
-    <%= f.button :submit, class: "btn btn-routine btn-scooter-light" %>
-    <div class="btn btn-routine btn-scooter-light" data-dismiss="modal">Cancel</div>
-  </div>
+    <div id="sidebar-form">
+
+      <div id="question-header">
+        <h3><%= @question.type.titleize %></h3>
+      </div>
+
+      <div id="#question-container">
+          <%= f.error_notification %>
+          <%= f.input :name, input_html: { class: "name-input" } %>
+      </div>
+
+      <div id="options-container">
+        <% if @question.type == 'multiple choice' %>
+          <p>Choices</p>
+          <div class="question_choices">
+            <%= f.simple_fields_for :question_choices do |choice| %>
+            <div id="choice-inputs">
+                <%= render 'question_choice_fields', f: choice %>
+            </div>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association f, :question_choices do %>
+                <i class="fa fa-plus tool-links" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div id="buttons-container">
+
+        <%= f.button :submit, 'Save', class: "btn btn-routine btn-scooter-light" %>
+        <div class="btn btn-routine btn-scooter-light" data-dismiss="modal">Cancel</div>
+      </div>
+
+    </div>
   <% end %>
+</div>
+
+<div id="#question-preview">
+  <div id="q-container">
+    <ul class="questions">
+      <%= render "forms/#{@question.type.gsub(" ", "_")}", question: @question  %>
+    </ul>
+  </div>
 </div>

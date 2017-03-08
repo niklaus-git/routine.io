@@ -1,6 +1,12 @@
 <div class="nested-fields">
-  <%= f.input :name, input_html: { class: "name-input" }, label: false %>
-  <%= link_to_remove_association f do%>
-    <i class="fa fa-trash" aria-hidden="true" ></i>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-10">
+      <%= f.input :name, input_html: { class: "name-input" }, label: false %>
+    </div>
+    <div class="col-xs-2">
+      <%= link_to_remove_association f do%>
+        <i class="fa fa-trash tool-links" aria-hidden="true" ></i>
+      <% end %>
+    </div>
+  </div>
 </div>
