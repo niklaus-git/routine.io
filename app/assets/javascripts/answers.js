@@ -1,3 +1,6 @@
+var choices = [],
+    choice_value;
+
 $('.question-item:first').removeClass('inactive').addClass('focus');
 $('.focus input, .focus textarea').focus();
 $(document).keydown(function(event) {
@@ -53,16 +56,46 @@ $('.short-text input, .long-text textarea').keyup(function() {
 $('.choice').click(function() {
   if ($(this).hasClass('answer')) {
     $(this).removeClass('answer');
+    if ($(this).parents('.multiple').length) {
+      choice_value = $('.focus input').val();
+      choices = choice_value.split("//CHOICE//");
+      choices.pop();
+      var value = $(this).find('.label').text();
+      var index = choices.indexOf(value);
+      if (index >= 0) {
+        choices.splice( index, 1 );
+      }
+      if (choices.length == 1) {
+        value = choices[0] + '//CHOICE//';
+      } else {
+        value = choices.join('//CHOICE//');
+        value = value + '//CHOICE//';
+      };
+      $('.focus input').val(value);
+    console.log($('.focus input').val());
+    } else {
     $('.focus input').val('');
+    };
   } else {
     if ($(this).parents('.scale').length || $(this).parents('.yes-no').length) {
       $('.answer').removeClass('answer');
+      $(this).addClass('answer');
+      $('.focus input').val(function() {
+        var value = $('.focus .answer').find('.label').text();
+        return value.toLowerCase();
+      });
+    } else {
+
+      // Multiple Choice Question: Selecting Choice
+
+      $(this).addClass('answer');
+      choice_value = $('.focus input').val();
+      $('.focus input').val('');
+      var value = $(this).find('.label').text();
+      value = value + '//CHOICE//';
+      $('.focus input').val(choice_value + value);
     };
-    $(this).addClass('answer');
-    $('.focus input').val(function() {
-      var value = $('.focus .answer').find('.label').text();
-      return value.toLowerCase();
-    });
+
   };
 });
 

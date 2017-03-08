@@ -46,6 +46,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @question.question_choices.destroy_all
     @question.delete
     @questions = @routine.questions
     @questions.each_with_index do |question, index|

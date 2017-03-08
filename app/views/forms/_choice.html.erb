@@ -1,4 +1,4 @@
-<li id=<%= "#{choice.id}" %> class="choice">
+<li id=<%= "#{choice.id}" %> class="choice <%= "answer" if choice?(choice.name, value) %>">
   <input type="hidden" name="name" value=<%= "#{choice.name}" %> autocomplete="off">
   <span class="label"><%= choice.name %></span>
 </li>
