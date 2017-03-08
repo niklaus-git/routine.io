@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:show, :edit, :update, :destroy, :submit]
+  before_action :set_routine, only: [:show, :edit, :update, :destroy, :submit, :template]
 
   def index
     @routines = policy_scope(Routine)
@@ -36,6 +36,14 @@ class RoutinesController < ApplicationController
     @answer = @routine.today
     skip_authorization if @routine.user == current_user
     redirect_to answer_fields_path(@answer)
+  end
+
+  def template
+    @routine.template = true
+    skip_authorization if @routine.user == current_user
+    if @routine.save
+      redirect_to routine_editor_path(@routine)
+    end
   end
 
   def set_routine
