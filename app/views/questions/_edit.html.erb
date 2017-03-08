@@ -39,10 +39,15 @@
   <% end %>
 </div>
 
-<div id="#question-preview">
+<div id="question-preview">
   <div id="q-container">
     <ul class="questions">
       <%= render "forms/#{@question.type.gsub(" ", "_")}", question: @question  %>
     </ul>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#q-container').find('.question-item').removeClass('inactive');
+  $('#q-container').find('.focus input, .focus textarea').focus();
+</script>

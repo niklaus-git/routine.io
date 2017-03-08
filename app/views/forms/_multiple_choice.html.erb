@@ -4,13 +4,14 @@
   <%= render 'forms/qheader', question: question %>
 
   <!-- User Input -->
+  <% defined?(@answer) ? value = Field.stored_answer(@answer.id, question.id) : value = "" %>
+  <input type="hidden" name=<%= "#{question.id}"%> value='<%= Field.stored_answer(@answer.id, question.id) if defined?(@answer) %>'>
   <div class="multiple list">
     <ul class="columns">
       <% question.question_choices.each do |choice| %>
-        <%= render 'forms/choice', question: question, choice: choice %>
+        <%= render 'forms/choice', question: question, choice: choice, value: value %>
       <% end %>
     </ul>
-    <input type="hidden" name=<%= "#{question.id}"%> value='<%= Field.stored_answer(@answer.id, question.id) if defined?(@answer) %>'>
   </div>
 
 </li>

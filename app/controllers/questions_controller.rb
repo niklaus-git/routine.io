@@ -23,8 +23,6 @@ class QuestionsController < ApplicationController
       if @question.save
         format.html { redirect_to routine_questions_path(@routine) }
         format.js
-      else
-        format.html { render :new }
       end
     end
   end
@@ -48,6 +46,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @question.question_choices.destroy_all
     @question.delete
     @questions = @routine.questions
     @questions.each_with_index do |question, index|
