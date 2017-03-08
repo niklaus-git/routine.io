@@ -23,8 +23,6 @@ class QuestionsController < ApplicationController
       if @question.save
         format.html { redirect_to routine_questions_path(@routine) }
         format.js
-      else
-        format.html { render :new }
       end
     end
   end

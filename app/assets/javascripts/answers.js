@@ -53,7 +53,6 @@ $('.short-text input, .long-text textarea').keyup(function() {
 $('.choice').click(function() {
   if ($(this).hasClass('answer')) {
     $(this).removeClass('answer');
-    console.log("Inside 1");
     $('.focus input').val('');
   } else {
     if ($(this).parents('.scale').length || $(this).parents('.yes-no').length) {
@@ -62,8 +61,6 @@ $('.choice').click(function() {
     $(this).addClass('answer');
     $('.focus input').val(function() {
       var value = $('.focus .answer').find('.label').text();
-      console.log("Inside 2");
-      console.log(value.toLowerCase());
       return value.toLowerCase();
     });
   };

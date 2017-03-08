@@ -3,11 +3,11 @@
     <%= routine.name %>
   </div>
   <div class="question-tools">
-    <%= link_to routine_editor_path(routine), class: "tooltip--triangle", target: 'blank',titletool:'Edit Routine', 'data-toggle' => 'tooltip'  do %>
+    <%= link_to routine_editor_path(routine), class: "tooltip--triangle", titletool:'Edit Routine', 'data-toggle' => 'tooltip'  do %>
       <i class="fa fa-pencil" aria-hidden="true"></i>
     <% end %>
     <% if routine.questions.any? %>
-      <%= link_to answer_fields_path(routine.today), class: "tooltip--triangle", target: 'blank', titletool: 'Add Answers', 'data-toggle' => 'tooltip' do %>
+      <%= link_to answer_fields_path(routine.today), class: "tooltip--triangle", titletool: 'Add Answers', 'data-toggle' => 'tooltip' do %>
         <i class="fa fa-list-ol" aria-hidden="true"></i>
       <% end %>
     <% else %>
