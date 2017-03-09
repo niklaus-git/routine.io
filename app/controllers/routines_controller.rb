@@ -43,6 +43,8 @@ class RoutinesController < ApplicationController
     skip_authorization if @routine.user == current_user
     if @routine.save
       redirect_to routine_editor_path(@routine)
+    else
+      redirect_to root_path
     end
   end
 

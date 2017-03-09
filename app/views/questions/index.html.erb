@@ -35,8 +35,9 @@
             <h3>Select Template</h3>
 
             <% @templates.each do |template| %>
-
-                <%= link_to template.name, use_template_routine_path(@routine, template_id: template.id), method: :post, class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+              <%= link_to use_template_routine_path(@routine, template_id: template.id), method: :post do %>
+                <div class="template-card"><%= template.name.titleize %></div>
+              <% end %>
             <% end %>
             <div class="btn btn-routine btn-signup-submit btn-full-w">Start From Scratch</div>
             </div>

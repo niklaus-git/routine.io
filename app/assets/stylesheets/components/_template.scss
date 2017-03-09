@@ -1,0 +1,16 @@
+.template-card {
+  word-wrap: break-word;
+  letter-spacing: 1.5px;
+  font-weight: lighter;
+  padding: 10px 25px;
+  color: $text-grey;
+  background: #FFF;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  &:hover {
+    color: $scooter-color;
+  }
+  a {
+    text-decoration: none;
+  }
+}

@@ -8,8 +8,6 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
-gem "letter_opener", group: :development
-
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
