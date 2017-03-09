@@ -1,9 +1,10 @@
 class QuestionsController < ApplicationController
-  before_action :set_routine
+  before_action :set_routine, except: [:use_template]
   before_action :set_question, only: [:edit, :update, :destroy]
 
   def index
     @questions = @routine.questions.order(:position)
+    @templates = Routine.templates
     skip_policy_scope if @routine.user == current_user
   end
 

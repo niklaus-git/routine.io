@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       get 'submit'
       post 'template'
+      post 'use_template'
     end
     resources :questions, except: [:index]
     get 'editor', to: 'questions#index'
