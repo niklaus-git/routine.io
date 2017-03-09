@@ -59,8 +59,13 @@ $('.short-text input, .long-text textarea').keyup(function() {
 });
 
 $('.choice').click(function() {
+
+  // Choice is Already Selected
   if ($(this).hasClass('answer')) {
     $(this).removeClass('answer');
+
+    // Removes Value From Stored Choices for Multiple Choice Questions
+
     if ($(this).parents('.multiple').length) {
       choice_value = $('.focus input').val();
       choices = choice_value.split("//CHOICE//");
@@ -78,12 +83,16 @@ $('.choice').click(function() {
       };
       $('.focus input').val(value);
     console.log($('.focus input').val());
+
+    // Resets Value for Other Question Types
     } else {
-    $('.focus input').val('');
+      $('.focus input').val('');
     };
+
+  // Choice Is Not Yet Selected
   } else {
     if ($(this).parents('.scale').length || $(this).parents('.yes-no').length) {
-      $('.answer').removeClass('answer');
+      $(this).parents('.question-item').find('.answer').removeClass('answer')
       $(this).addClass('answer');
       $('.focus input').val(function() {
         var value = $('.focus .answer').find('.label').text();

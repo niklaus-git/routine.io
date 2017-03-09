@@ -16,10 +16,16 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  rescue_from Pundit::NotAuthorizedError, with: :permission_denied
+
   private
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def permission_denied
+    head 403
   end
 
 end
