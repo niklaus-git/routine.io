@@ -1,5 +1,5 @@
 <div id="questions-sidebar">
-  <%= simple_form_for [@routine, @question], remote: true do |f| %>
+  <%= simple_form_for [@routine, @question], html: { autocomplete: 'off' }, remote: true do |f| %>
     <div id="sidebar-form">
 
       <div id="question-header">
