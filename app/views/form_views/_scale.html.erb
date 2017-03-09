@@ -1,0 +1,18 @@
+<li id=<%= "#{question.id}" %>>
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Input -->
+  <div class="scale">
+    <% defined?(@answer) ? value = Field.stored_answer(@answer.id, question.id) : value = "" %>
+    <ul class="scale-columns">
+      <% for i in 1..question.options do %>
+        <li class="no_hover <%= "answer" if value.to_i == i %>">
+          <div class="label"><%= "#{i}" %></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</li>

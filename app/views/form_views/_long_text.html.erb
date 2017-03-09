@@ -1,0 +1,11 @@
+<li id=<%= "#{question.id}" %>>
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Answer -->
+  <div class="textarea">
+    <p><%= Field.stored_answer(@answer.id, question.id) if defined?(@answer) %></p>
+  </div>
+
+</li>
