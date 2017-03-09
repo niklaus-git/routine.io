@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-6">
       <div class="routine-new-form">
-        <%= simple_form_for(@routine) do |f| %>
+        <%= simple_form_for @routine, html: { autocomplete: 'off' } do |f| %>
           <%= f.input :name, placeholder: "ex: My daily work Routine", :label => "Name your Routine" %>
           <%= f.button :submit,"Let's start!", class: "btn btn-routine   btn-scooter-light" %>
         <% end %>
