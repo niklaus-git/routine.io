@@ -18,7 +18,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    byebug
     @question = @routine.questions.new(question_params)
     @question.position = @routine.questions.count + 1
     respond_to do |format|
