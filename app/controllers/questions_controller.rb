@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    byebug
     @question = @routine.questions.new(question_params)
     @question.position = @routine.questions.count + 1
     respond_to do |format|
@@ -76,7 +77,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:name, :question_type_id, question_choices_attributes: [:id, :name, :_destroy])
+    params.require(:question).permit(:name, :options, :question_type_id, question_choices_attributes: [:id, :name, :_destroy])
   end
 
 end

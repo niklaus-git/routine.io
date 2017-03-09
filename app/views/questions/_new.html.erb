@@ -27,6 +27,9 @@
               <% end %>
             </div>
           </div>
+        <% elsif @question_type.name == 'scale' %>
+          <p>Options</p>
+          <%= f.input :options, collection: (3..10) %>
         <% end %>
       </div>
 
