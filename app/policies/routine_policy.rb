@@ -24,4 +24,8 @@ class RoutinePolicy < ApplicationPolicy
   def use_template?
     true
   end
+
+  def sort?
+    record.user == user
+  end
 end

@@ -31,7 +31,7 @@ $('#routine-questions').sortable().bind('sortupdate', function(e, ui){
 
   // send the updated order via ajax
   $.ajax({
-      type: "PUT",
+      type: "POST",
       url: '/sort',
       data: { order: updated_order, routine_id: routine }
   });
