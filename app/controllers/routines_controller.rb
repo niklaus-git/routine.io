@@ -21,6 +21,7 @@ class RoutinesController < ApplicationController
   end
 
   def show
+    authorize @routine
   end
 
   def edit
