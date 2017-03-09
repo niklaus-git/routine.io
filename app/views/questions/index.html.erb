@@ -4,7 +4,7 @@
   <div class="tab-window">
     <div class="tab-content">
       <div class="tab">
-        <input type="radio" name="tab-group-1" id="tab-1" checked>
+        <input type="radio" name="tab-group-1" id="tab-1">
         <label for="tab-1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         <div class="content">
           <div class="routine-sidebar text-center">
@@ -28,14 +28,17 @@
       </div>
 
       <div class="tab">
-        <input type="radio" name="tab-group-1" id="tab-2">
+        <input type="radio" name="tab-group-1" id="tab-2" checked>
         <label for="tab-2"><i class="fa fa-th-list" aria-hidden="true"></i></label>
         <div class="content">
           <div class="routine-sidebar text-center">
-            <h3>Select Templates</h3>
+            <h3>Select Template</h3>
 
-            <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
-            <%= link_to "Short Text", new_routine_question_path(@routine, question_type_name: "short text"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <% @templates.each do |template| %>
+
+                <%= link_to template.name, use_template_routine_path(@routine, template_id: template.id), method: :post, class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
+            <% end %>
+            <div class="btn btn-routine btn-signup-submit btn-full-w">Start From Scratch</div>
             </div>
           </div>
         </div>

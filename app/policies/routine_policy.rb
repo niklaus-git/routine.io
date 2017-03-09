@@ -20,4 +20,8 @@ class RoutinePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def use_template?
+    true
+  end
 end

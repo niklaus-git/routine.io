@@ -28,6 +28,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'momentjs-rails'
 gem 'cocoon'
+gem 'deep_cloneable', '~> 2.2.2'
 
 
 group :development, :test do

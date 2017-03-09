@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:show, :edit, :update, :destroy, :submit, :template]
+  before_action :set_routine, only: [:show, :edit, :update, :destroy, :submit, :template, :use_template]
 
   def index
     @routines = policy_scope(Routine)
@@ -43,6 +43,22 @@ class RoutinesController < ApplicationController
     skip_authorization if @routine.user == current_user
     if @routine.save
       redirect_to routine_editor_path(@routine)
+    end
+  end
+
+  def use_template
+    @template = Routine.find(params[:template_id])
+    if @template.template
+      @routine.destroy_questions
+      @template.questions.each do |question|
+        q = question.deep_clone include: [:question_choices]
+        @routine.questions << q
+      end
+      @routine.save
+      redirect_to routine_editor_path(@routine)
+      skip_authorization
+    else
+      redirect_to root_path
     end
   end
 

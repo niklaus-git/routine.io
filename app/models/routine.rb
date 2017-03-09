@@ -50,4 +50,15 @@ class Routine < ApplicationRecord
     results = self.answers.joins(:fields).where(fields: { question_id: question.id })
     results.empty? ? false : true
   end
+
+  def self.templates
+    Routine.where(template: true).first(5)
+  end
+
+  def destroy_questions
+    self.questions.each do |question|
+      question.question_choices.destroy_all
+      question.delete
+    end
+  end
 end
