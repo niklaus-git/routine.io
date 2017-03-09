@@ -52,7 +52,7 @@ class Routine < ApplicationRecord
   end
 
   def self.templates
-    Routine.where(template: true).first(5)
+    Routine.where(template: true).first(4)
   end
 
   def destroy_questions
