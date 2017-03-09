@@ -142,9 +142,23 @@
   }
 
 .inactive {
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .answer {
   background: $form-hover !important;
 }
+
+.no_hover {
+  &:hover {
+    background: inherit !important;
+    cursor: inherit !important;
+  }
+}
+
+.answer.no_hover {
+  &:hover {
+    background: $form-hover !important;
+  }
+}
+

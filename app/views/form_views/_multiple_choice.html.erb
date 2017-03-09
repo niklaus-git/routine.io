@@ -1,0 +1,16 @@
+<li id=<%= "#{question.id}" %>>
+
+  <!-- Question Header -->
+  <%= render 'forms/qheader', question: question %>
+
+  <!-- User Input -->
+  <% defined?(@answer) ? value = Field.stored_answer(@answer.id, question.id) : value = "" %>
+  <div class="multiple list">
+    <ul class="columns">
+      <% question.question_choices.each do |choice| %>
+        <%= render 'form_views/choice', question: question, choice: choice, value: value %>
+      <% end %>
+    </ul>
+  </div>
+
+</li>

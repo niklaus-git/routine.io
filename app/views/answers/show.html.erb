@@ -1,11 +1,11 @@
 <div class="routine-subnav">
   <div class="subnav-row">
-    <%= link_to answer_fields_path(@routine.previous_day(@answer.created_at)) do %>
+    <%= link_to answer_path(@routine.previous_day(@answer.created_at)) do %>
       <%= inline_svg("arrow_left.svg", class: "navigation-arrow") %>
     <% end %>
     <div class="subnav-body"><h1><%= @routine.name %><h1></div>
 
-    <%= form_tag(answer_goto_path(@answer), method: :put, id: "datepicker") do %>
+    <%= form_tag(answer_goto_show_path(@answer), method: :put, id: "datepicker") do %>
       <input type="text" name="date" data-type="date" id="date-input" placeholder="Go to date" readOnly/>
     <% end %>
     <!-- <div id="material-header-holder" style="display:none">
@@ -26,7 +26,7 @@
     <% if @answer.today? %>
       <%= inline_svg("arrow_right.svg", class: "navigation-arrow-nohover") %>
     <% else %>
-      <%= link_to answer_fields_path(@routine.next_day(@answer.created_at)) do %>
+      <%= link_to answer_path(@routine.next_day(@answer.created_at)) do %>
         <%= inline_svg("arrow_right.svg", class: "navigation-arrow") %>
       <% end %>
     <% end %>
@@ -38,10 +38,9 @@
   </h2>
   <p>Your answers for <%= @answer.date %>:</p>
   <div id="answer-form">
-    <%= form_tag("/answers/#{@answer.id}", method: :patch) %>
     <ul class="questions">
       <% @questions.each do | question| %>
-        <%= render "forms/#{question.type.gsub(" ", "_")}", question: question %>
+        <%= render "form_views/#{question.type.gsub(" ", "_")}", question: question %>
       <% end %>
     </ul>
     <div id="buttons">
@@ -49,7 +48,7 @@
               <span>Save</span>
       </button>
       <%= link_to "Edit Form", routine_editor_path(@routine), class: "btn btn-routine btn-pill btn-scooter-light"  %>
-      <%= link_to "View Answers", answer_path(@answer), class: "btn btn-routine btn-pill btn-scooter-light"  %>
+      <%= link_to "Edit Answers", answer_fields_path(@answer), class: "btn btn-routine btn-pill btn-scooter-light"  %>
     </div>
     </form>
   </div>
