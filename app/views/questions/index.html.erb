@@ -22,11 +22,14 @@
 
             <%= link_to "Numbers", new_routine_question_path(@routine, question_type_name: "number"), remote: true, "data-toggle" => "modal", "data-target" => "new-question", class: "btn btn-routine btn-form-white btn-full-w btn-shadow spaced-bottom" %>
 
+<% unless @routine.answered? %>
             <button class="btn btn-routine btn-signup-submit btn-full-w" data-target="#templates" id="template-btn">Use Template</button>
+<% end %>
           </div>
         </div>
       </div>
 
+<% unless @routine.answered? %>
       <div class="tab" id="template-tab" data-target="#templates">
         <input type="radio" name="tab-group-1" id="tab-2">
         <label for="tab-2"><i class="fa fa-th-list" aria-hidden="true"></i></label>
@@ -43,10 +46,13 @@
             </div>
           </div>
         </div>
+<% end %>
+
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="col-md-8 text-center">
 <div class="routine-editor">
@@ -103,46 +109,48 @@
 </div>
 </div>
 
-<% content_for(:after_js) do %>
-  <script>
-    $(document).ready(function() {
+<% unless @routine.answered? %>
+  <% content_for(:after_js) do %>
+    <script>
+      $(document).ready(function() {
 
-      $(".tab").on("click", function(event){
-      // Change active tab
-        $(".tab").removeClass('active');
-        $(this).addClass('active');
+        $(".tab").on("click", function(event){
+        // Change active tab
+          $(".tab").removeClass('active');
+          $(this).addClass('active');
 
-          // Hide all tab-content (use class="hidden")
+            // Hide all tab-content (use class="hidden")
 
-        $(".content").addClass('hidden');
+          $(".content").addClass('hidden');
 
-         // Show target tab-content (use class="hidden")
-        var tabSelector = $(this).data("target");
-        $(tabSelector).removeClass("hidden");
+           // Show target tab-content (use class="hidden")
+          var tabSelector = $(this).data("target");
+          $(tabSelector).removeClass("hidden");
+        });
+
+        $('#template-btn').on("click", function(event){
+            setTimeout(function(){ $('#tab-2').click(); }, 100);
+
+            // document.getElementById("tab-1").checked = false;
+            // document.getElementById("tab-2").checked = true;
+
+            // var templateView = $(this).data("target");
+             console.log("VAR:"); // #templates
+
+            // $("#question-tab").removeClass('active');
+            // $("#question-selection").addClass('hidden');
+
+            // $("#template-tab").addClass('active');
+            // $(templateView).removeClass('hidden');
+
+        });
+
+        $('#question-btn').on("click", function(event){
+            setTimeout(function(){ $('#tab-1').click(); }, 100);
+
+        });
+
       });
-
-      $('#template-btn').on("click", function(event){
-          setTimeout(function(){ $('#tab-2').click(); }, 100);
-
-          // document.getElementById("tab-1").checked = false;
-          // document.getElementById("tab-2").checked = true;
-
-          // var templateView = $(this).data("target");
-           console.log("VAR:"); // #templates
-
-          // $("#question-tab").removeClass('active');
-          // $("#question-selection").addClass('hidden');
-
-          // $("#template-tab").addClass('active');
-          // $(templateView).removeClass('hidden');
-
-      });
-
-      $('#question-btn').on("click", function(event){
-          setTimeout(function(){ $('#tab-1').click(); }, 100);
-
-      });
-
-    });
-  </script>
+    </script>
+  <% end %>
 <% end %>

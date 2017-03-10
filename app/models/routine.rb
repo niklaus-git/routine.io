@@ -61,4 +61,8 @@ class Routine < ApplicationRecord
       question.delete
     end
   end
+
+  def answered?
+    self.has_answer
+  end
 end
