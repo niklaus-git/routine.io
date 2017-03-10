@@ -2,18 +2,35 @@
   display: flex;
 }
 
+.question-row:hover .question-box {
+      position: relative;
+      border: 1px solid $border-line-hover;
+      top: -1px;
+}
+
+.question-row:hover .question-position {
+      position: relative;
+      border: 1px solid $border-line-hover;
+      top: -1px;
+}
+
 .question-box {
   color: $text-dark;
+  text-decoration: none;
   font-weight: lighter;
   padding: 10px 25px;
   background: #FFF;
   border: 1px solid $border-line;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
   margin-bottom: 10px;
+  transition: top 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .question-position {
   margin-right: 10px;
+  transition: top 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .question-body {

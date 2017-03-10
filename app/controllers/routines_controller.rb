@@ -35,6 +35,8 @@ class RoutinesController < ApplicationController
 
   def submit
     @answer = @routine.today
+    @routine.has_answer = true
+    @routine.save
     skip_authorization if @routine.user == current_user
     redirect_to answer_fields_path(@answer)
   end

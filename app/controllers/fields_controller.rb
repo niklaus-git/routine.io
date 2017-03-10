@@ -4,6 +4,10 @@ class FieldsController < ApplicationController
 
   def index
     @routine = @answer.routine
+    unless @routine.answered?
+      @routine.has_answer = true
+      @routine.save
+    end
     authorize @routine
     skip_policy_scope if @routine.user == current_user
     @questions = @routine.questions.order(:position)
