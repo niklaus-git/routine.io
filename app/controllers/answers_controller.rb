@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
       field.name = params["#{field.question_id}"]
       field.save
     end
-    redirect_to answer_fields_path(@answer)
+    redirect_to answer_path(@answer)
   end
 
   def destroy
