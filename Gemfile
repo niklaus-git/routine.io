@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
-gem 'rails', '5.0.1'
+gem 'rails', '7.1.5.2'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
@@ -23,10 +23,10 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
 gem 'omniauth-github'
 gem 'remotipart', github: 'mshibuya/remotipart'
-gem 'rails_admin', '>= 1.0.0.rc'
+gem 'rails_admin', '>= 3.0.0'
 gem 'momentjs-rails'
 gem 'cocoon'
-gem 'deep_cloneable', '~> 2.2.2'
+gem 'deep_cloneable', '~> 3.2.0'
 
 
 group :development, :test do
